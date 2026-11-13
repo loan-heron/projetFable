@@ -31,3 +31,9 @@ services:
     ports: ["10.10.2.10:8090:8090"]
     mem_limit: 256m
     cpus: 0.5
+  intranet:
+    build: https://github.com/loan-heron/projetFable.git#claude/project-thread-5ylzcz:breche/cibles/intranet
+    restart: unless-stopped
+    ports: ["10.10.2.10:8091:8091"]
+    mem_limit: 768m
+    cpus: 1

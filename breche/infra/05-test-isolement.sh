@@ -19,5 +19,6 @@ doit_echouer "$PLAT_VM_IP" 22               "la VM plateforme"
 doit_marcher "DVWA répond (depuis l'hôte)"       "curl -sf -m 5 http://$LABS_VM_IP:8081/login.php"
 doit_marcher "Juice Shop répond (depuis l'hôte)" "curl -sf -m 5 http://$LABS_VM_IP:8082/"
 doit_marcher "Boutique Morel répond (depuis l'hôte)" "curl -sf -m 5 http://$LABS_VM_IP:8090/"
+doit_marcher "Intranet Morel répond (depuis l'hôte)" "curl -sf -m 5 http://$LABS_VM_IP:8091/"
 echo; echo "Résultat : $ok OK, $ko échec(s)."
 [ "$ko" -eq 0 ] && echo "FEU VERT 1 : isolement confirmé." || { echo "Isolement NON confirmé."; exit 1; }

@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block corps %}<h1>Messagerie interne</h1><form method="post"><textarea name="texte" rows="3" placeholder="Écrire à toute l'équipe"></textarea><button>Publier</button></form>{% for m in messages|reverse %}<div class="msg"><div class="meta">{{ m.auteur }} · {{ m.le }}</div>{{ m.texte|safe }}</div>{% endfor %}{% endblock %}

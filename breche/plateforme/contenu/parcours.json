@@ -165,8 +165,27 @@
    "niveau": 1,
    "titre": "Côté client",
    "zone": "Le webmail",
-   "resume": "XSS, CSRF et vol de session.",
-   "ouvert": false
+   "resume": "Attaquer les autres utilisateurs à travers leur navigateur : XSS, vol de session et CSRF.",
+   "ouvert": true,
+   "lecons": [
+    {
+     "id": "xss",
+     "titre": "Comprendre la XSS"
+    },
+    {
+     "id": "session",
+     "titre": "Voler une session, et le cousin CSRF"
+    },
+    {
+     "id": "corriger",
+     "titre": "Corriger : échapper, HttpOnly, CSP"
+    }
+   ],
+   "lab": {
+    "id": "directeur",
+    "titre": "Le jeton de la directrice",
+    "drapeau_sha256": "f1c53a8fe46e8e3740f0637e1969e5f2c2e2b6a39a7f655c72710d1a2ff84d37"
+   }
   },
   {
    "id": "acces",
@@ -174,8 +193,27 @@
    "niveau": 1,
    "titre": "Contrôle d'accès",
    "zone": "Le portail mutuelle",
-   "resume": "IDOR, JWT et logique métier.",
-   "ouvert": false
+   "resume": "Être connecté ne donne pas tous les droits : IDOR, jetons JWT et logique métier.",
+   "ouvert": true,
+   "lecons": [
+    {
+     "id": "idor",
+     "titre": "Les références directes (IDOR)"
+    },
+    {
+     "id": "jwt",
+     "titre": "Les jetons JWT et leurs pièges"
+    },
+    {
+     "id": "corriger",
+     "titre": "Corriger : vérifier côté serveur"
+    }
+   ],
+   "lab": {
+    "id": "dossier",
+    "titre": "Le dossier médical",
+    "drapeau_sha256": "5c82ae7905b64ecb7ddb999fe515aac5dc8b34f607196c930d39a8d64f09ff14"
+   }
   },
   {
    "id": "prise-de-pied",

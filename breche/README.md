@@ -46,6 +46,7 @@ Puis DVWA sur http://localhost:8081 (admin / password) et Juice Shop sur http://
 | `plateforme/public/` | Charte « dossier d'enquête » : `style.css`, logo, favicon. Mode sombre automatique. |
 | `cibles/planque/` | Lab du module 1 (shell Linux). |
 | `cibles/boutique/` | Morel Optique, cible **volontairement vulnérable** des modules 3, 4 et 5. |
+| `cibles/intranet/` | Intranet Morel, cible **volontairement vulnérable** des modules 6 et 7 (XSS stockée avec une directrice simulée, IDOR). |
 | `outils/generer-ecoute.py` | Génère la capture réseau du module 2. |
 | `deploiement/` | `docker-compose.yml` de la plateforme sur la VM 9101. |
 
