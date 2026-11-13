@@ -6,7 +6,7 @@ cd "$(dirname "$0")"; source ./config.env
 SSH="ssh -o StrictHostKeyChecking=accept-new $VM_USER@$LABS_VM_IP"
 bash labs-internet.sh on
 trap 'bash labs-internet.sh off' EXIT
-$SSH 'sudo apt-get update -q && sudo apt-get install -yq docker.io docker-compose qemu-guest-agent && sudo usermod -aG docker $USER && sudo systemctl enable --now qemu-guest-agent'
+$SSH 'sudo cloud-init status --wait >/dev/null; while sudo fuser /var/lib/dpkg/lock-frontend >/dev/null 2>&1; do sleep 3; done; sudo apt-get update -q && sudo apt-get install -yq docker.io docker-compose qemu-guest-agent && sudo usermod -aG docker $USER && sudo systemctl enable --now qemu-guest-agent'
 scp -o StrictHostKeyChecking=accept-new ../labs/docker-compose.yml "$VM_USER@$LABS_VM_IP:~/docker-compose.yml"
 $SSH 'sudo docker-compose -f ~/docker-compose.yml pull && sudo docker-compose -f ~/docker-compose.yml up -d && sudo docker ps --format "{{.Names}}  {{.Status}}"'
 echo "Labs installés. Internet est refermé automatiquement."
