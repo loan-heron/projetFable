@@ -4,6 +4,8 @@ Proposition validée : https://claude.ai/artifact/RYGXvikRh6hXSqeya8j9qi
 
 ## Phase 1 · Socle sécurisé
 
+Nœud cible : **192.168.1.200** (Ryzen 7 5700G, 30 Go dont environ 13 Go libres, PVE 9.2.5, ~700 Go libres sur local-lvm).
+
 Objectif : deux réseaux virtuels isolés sur le nœud Proxmox, une VM plateforme, une VM labs,
 et les premières cibles d'entraînement (DVWA, OWASP Juice Shop), sans qu'aucune cible
 puisse joindre la maison, internet ou l'hôte Proxmox.
@@ -17,9 +19,9 @@ puisse joindre la maison, internet ou l'hôte Proxmox.
 ### Ordre d'exécution (en root sur l'hôte Proxmox, dans `breche/infra/`)
 
 1. `bash 00-etat-des-lieux.sh` : lecture seule, puis ajuster `config.env` (pont maison, stockage, RAM, identifiants de VM).
-2. `bash 01-reseaux.sh` : crée vmbr1 et vmbr2 (sauvegarde de `/etc/network/interfaces` avant).
+2. `bash 01-reseaux.sh` : crée vmbr1 et vmbr2 (dans `/etc/network/interfaces.d/breche`, rien d’autre n’est modifié).
 3. `bash 02-pare-feu.sh` : table nftables `inet breche`, persistante (service `breche-pare-feu`). N'altère aucune autre règle.
-4. `bash 03-vms.sh` : VM 9101 `breche-plateforme` (2 cœurs, 4 Go) et VM 9102 `breche-labs` (6 cœurs, 12 Go), Debian 12.
+4. `bash 03-vms.sh` : VM 9101 `breche-plateforme` (2 cœurs, 2 Go) et VM 9102 `breche-labs` (4 cœurs, 6 Go), Debian 12.
 5. `bash 04-installer-labs.sh` : Docker + DVWA + Juice Shop dans la VM Labs ; internet est ouvert puis refermé automatiquement.
 6. `bash 05-test-isolement.sh` : **feu vert 1**. Tout doit afficher OK.
 

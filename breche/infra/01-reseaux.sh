@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 # Brèche · crée les deux ponts isolés (vmbr1 plateforme, vmbr2 labs).
-# Ne touche pas aux ponts existants. Sauvegarde /etc/network/interfaces avant.
+# Ne touche pas aux ponts existants : tout est écrit dans /etc/network/interfaces.d/breche.
 # Annulation : bash 99-annuler.sh
 set -euo pipefail
 cd "$(dirname "$0")"; source ./config.env
 
 for br in "$PLAT_BRIDGE" "$LABS_BRIDGE"; do
-  if ip link show "$br" >/dev/null 2>&1 || grep -q "iface $br" /etc/network/interfaces; then
+  if ip link show "$br" >/dev/null 2>&1 || grep -rqs "iface $br" /etc/network/interfaces /etc/network/interfaces.d/; then
     echo "Le pont $br existe déjà : arrêt, rien n'a été modifié. Change PLAT_BRIDGE/LABS_BRIDGE dans config.env."; exit 1
   fi
 done
 
-cp /etc/network/interfaces "/etc/network/interfaces.avant-breche.$(date +%Y%m%d-%H%M%S)"
-cat >> /etc/network/interfaces <<NET
+grep -q "source /etc/network/interfaces.d/\*" /etc/network/interfaces || { echo "La ligne source interfaces.d/* manque dans /etc/network/interfaces : arrêt."; exit 1; }
+cat > /etc/network/interfaces.d/breche <<NET
 
 # --- Brèche : réseau plateforme (internet oui, maison non) ---
 auto $PLAT_BRIDGE
