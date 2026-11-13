@@ -1,0 +1,2 @@
+- relancer le banc optique
+- ne rien laisser traîner sur srv-test-03 (promis)

@@ -1,0 +1,244 @@
+{
+ "entreprise": {
+  "nom": "Verrerie Morel",
+  "resume": "Fabricant lyonnais d'optiques de précision depuis 1931 : lentilles, prismes, lunettes de laboratoire. 140 salariés, une boutique en ligne, un intranet, un vieux contrôleur de domaine."
+ },
+ "niveaux": [
+  {
+   "id": 0,
+   "nom": "Fondations",
+   "note": "Facultatif si tu maîtrises déjà Linux, le réseau et HTTP."
+  },
+  {
+   "id": 1,
+   "nom": "Web"
+  },
+  {
+   "id": 2,
+   "nom": "Système"
+  },
+  {
+   "id": 3,
+   "nom": "Réseau interne"
+  },
+  {
+   "id": 4,
+   "nom": "Défense"
+  },
+  {
+   "id": 5,
+   "nom": "Examen"
+  }
+ ],
+ "modules": [
+  {
+   "id": "terminal",
+   "numero": 1,
+   "niveau": 0,
+   "titre": "Terminal et Linux",
+   "zone": "Poste de l'apprenti",
+   "resume": "Se déplacer, lire, chercher et comprendre les droits sur un serveur Linux.",
+   "ouvert": true,
+   "lecons": [
+    {
+     "id": "se-reperer",
+     "titre": "Se repérer dans un shell"
+    },
+    {
+     "id": "droits",
+     "titre": "Utilisateurs, groupes et droits"
+    },
+    {
+     "id": "chercher",
+     "titre": "Chercher comme un enquêteur"
+    }
+   ],
+   "lab": {
+    "id": "planque",
+    "titre": "La planque",
+    "drapeau_sha256": "ba08b71ef0838ac4b9d86cd34d56cff566165e671943b85d372647f1dd8f385c"
+   }
+  },
+  {
+   "id": "reseau",
+   "numero": 2,
+   "niveau": 0,
+   "titre": "Réseau",
+   "zone": "Le câble",
+   "resume": "Adresses, ports, TCP, DNS, et lire une capture réseau.",
+   "ouvert": true,
+   "lecons": [
+    {
+     "id": "couches",
+     "titre": "Du câble à l'application"
+    },
+    {
+     "id": "wireshark",
+     "titre": "Lire une capture avec Wireshark"
+    }
+   ],
+   "lab": {
+    "id": "ecoute",
+    "titre": "L'écoute",
+    "drapeau_sha256": "ebb8dd1d023c3040ff6da770f1518beaa865747e6f067265d65ab193ec8c350f"
+   }
+  },
+  {
+   "id": "web-dessous",
+   "numero": 3,
+   "niveau": 0,
+   "titre": "Le web vu de dessous",
+   "zone": "La vitrine",
+   "resume": "Requêtes, cookies, sessions et proxy d'interception.",
+   "ouvert": true,
+   "lecons": [
+    {
+     "id": "http",
+     "titre": "Une requête HTTP, ligne par ligne"
+    },
+    {
+     "id": "proxy",
+     "titre": "Intercepter avec Burp ou ZAP"
+    }
+   ],
+   "lab": {
+    "id": "prix",
+    "titre": "Prix cassé",
+    "drapeau_sha256": "14c75b811187e88d9e2b304923a96fd23bfa6136186de95cfc70e422935647d5"
+   }
+  },
+  {
+   "id": "reconnaissance",
+   "numero": 4,
+   "niveau": 1,
+   "titre": "Reconnaissance",
+   "zone": "Le site public",
+   "resume": "Cartographier une cible avant de la toucher : ports, chemins, fuites.",
+   "ouvert": true,
+   "lecons": [
+    {
+     "id": "cadre",
+     "titre": "Le cadre légal avant tout"
+    },
+    {
+     "id": "enumerer",
+     "titre": "Énumérer ports et chemins"
+    }
+   ],
+   "lab": {
+    "id": "archives",
+    "titre": "Archives oubliées",
+    "drapeau_sha256": "a1934fe33109ab373a752ce6b80c3add31202789c9aa9b8e485deb3aa91ca6c1"
+   }
+  },
+  {
+   "id": "injections",
+   "numero": 5,
+   "niveau": 1,
+   "titre": "Injections",
+   "zone": "La base clients",
+   "resume": "Quand une donnée devient du code : injection SQL, de la détection à l'extraction.",
+   "ouvert": true,
+   "lecons": [
+    {
+     "id": "sqli",
+     "titre": "Comprendre l'injection SQL"
+    },
+    {
+     "id": "union",
+     "titre": "Extraire avec UNION"
+    },
+    {
+     "id": "corriger",
+     "titre": "Corriger : les requêtes préparées"
+    }
+   ],
+   "lab": {
+    "id": "clients",
+    "titre": "Fichier clients",
+    "drapeau_sha256": "87048dd7f736daa4863aa0c75804cb35cb37207bf7daf445e9deeb10222dcff8"
+   }
+  },
+  {
+   "id": "cote-client",
+   "numero": 6,
+   "niveau": 1,
+   "titre": "Côté client",
+   "zone": "Le webmail",
+   "resume": "XSS, CSRF et vol de session.",
+   "ouvert": false
+  },
+  {
+   "id": "acces",
+   "numero": 7,
+   "niveau": 1,
+   "titre": "Contrôle d'accès",
+   "zone": "Le portail mutuelle",
+   "resume": "IDOR, JWT et logique métier.",
+   "ouvert": false
+  },
+  {
+   "id": "prise-de-pied",
+   "numero": 8,
+   "niveau": 2,
+   "titre": "Prise de pied",
+   "zone": "Le serveur web",
+   "resume": "Upload, reverse shell et SSRF.",
+   "ouvert": false
+  },
+  {
+   "id": "privileges",
+   "numero": 9,
+   "niveau": 2,
+   "titre": "Élévation de privilèges",
+   "zone": "Le compte root",
+   "resume": "SUID, sudo, cron et conteneurs.",
+   "ouvert": false
+  },
+  {
+   "id": "pivot",
+   "numero": 10,
+   "niveau": 3,
+   "titre": "Pivot",
+   "zone": "Le réseau privé",
+   "resume": "Tunnels et rebonds vers l'intérieur.",
+   "ouvert": false
+  },
+  {
+   "id": "active-directory",
+   "numero": 11,
+   "niveau": 3,
+   "titre": "Active Directory",
+   "zone": "Le contrôleur de domaine",
+   "resume": "Kerberos et mouvements latéraux.",
+   "ouvert": false
+  },
+  {
+   "id": "detection",
+   "numero": 12,
+   "niveau": 4,
+   "titre": "Détection",
+   "zone": "La salle de surveillance",
+   "resume": "Retrouver ses propres attaques dans les journaux.",
+   "ouvert": false
+  },
+  {
+   "id": "durcissement",
+   "numero": 13,
+   "niveau": 4,
+   "titre": "Durcissement",
+   "zone": "L'atelier",
+   "resume": "Corriger le code, configurer, vérifier.",
+   "ouvert": false
+  },
+  {
+   "id": "examen",
+   "numero": 14,
+   "niveau": 5,
+   "titre": "Examen",
+   "zone": "Le dossier complet",
+   "resume": "Intrusion complète et rapport écrit.",
+   "ouvert": false
+  }
+ ]
+}

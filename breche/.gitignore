@@ -1,0 +1,4 @@
+plateforme/node_modules/
+plateforme/donnees/
+deploiement/.env
+*.sqlite*

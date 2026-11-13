@@ -4,7 +4,8 @@ set -euo pipefail
 cd "$(dirname "$0")"; source ./config.env
 mkdir -p /etc/breche
 sed -e "s|@LABS@|$LABS_BRIDGE|g" -e "s|@PLAT@|$PLAT_BRIDGE|g" -e "s|@LAN@|$LAN_BRIDGE|g" \
-    -e "s|@LAN_SUBNET@|$LAN_SUBNET|g" -e "s|@PLAT_SUBNET@|$PLAT_SUBNET|g" -e "s|@LABS_VM_IP@|$LABS_VM_IP|g" \
+    -e "s|@LAN_SUBNET@|$LAN_SUBNET|g" -e "s|@PLAT_SUBNET@|$PLAT_SUBNET|g" -e "s|@LABS_VM_IP@|$LABS_VM_IP|g" -e "s|@PLAT_VM_IP@|$PLAT_VM_IP|g" \
+    -e "s|@PLAT_PUBLIC_PORT@|$PLAT_PUBLIC_PORT|g" -e "s|@PLAT_APP_PORT@|$PLAT_APP_PORT|g" \
     breche.nft.tpl > /etc/breche/breche.nft
 nft -c -f /etc/breche/breche.nft
 nft list table inet breche >/dev/null 2>&1 && nft delete table inet breche

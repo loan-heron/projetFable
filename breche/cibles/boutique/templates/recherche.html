@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block corps %}<h1>Résultats pour « {{ q }} »</h1>{% if erreur %}<p class="err">{{ erreur }}</p>{% endif %}<ul>{% for r in resultats %}<li>{{ r[0] }} — {{ r[1] }}</li>{% else %}<li>Aucun résultat.</li>{% endfor %}</ul>{% endblock %}

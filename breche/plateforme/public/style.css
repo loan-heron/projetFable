@@ -1,0 +1,145 @@
+/* Brèche · charte « dossier d'enquête » : papier, encre, un seul rouge de marquage. */
+:root {
+  --papier: #F2EDE3; --papier-2: #E8E1D3; --fiche: #FBF8F2;
+  --encre: #1B1A17; --crayon: #5E594F; --trait: #CFC6B4;
+  --rouge: #C8321E; --rouge-fond: rgba(200, 50, 30, .08);
+  --vert: #2F6B3B;
+  --titre: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --texte: "IBM Plex Sans", system-ui, sans-serif;
+  --machine: "Courier Prime", "Courier New", monospace;
+  --large: 1120px; --etroit: 720px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papier: #121310; --papier-2: #1B1C18; --fiche: #191A16;
+    --encre: #ECE6D8; --crayon: #A8A193; --trait: #34342D;
+    --rouge: #FF5A3C; --rouge-fond: rgba(255, 90, 60, .10); --vert: #7FC48D;
+    color-scheme: dark;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papier); color: var(--encre); font: 17px/1.6 var(--texte); }
+a { color: inherit; text-decoration-color: var(--rouge); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--rouge); }
+:focus-visible { outline: 3px solid var(--rouge); outline-offset: 2px; }
+img { max-width: 100%; }
+
+/* En-tête et pied */
+.entete { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: var(--large); margin: 0 auto; padding: 20px 16px; border-bottom: 2px solid var(--encre); }
+.marque { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 900 30px/1 var(--titre); letter-spacing: .02em; text-transform: uppercase; }
+.entete nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: flex-end; font-size: 15px; }
+.nav-pseudo { font-family: var(--machine); color: var(--crayon); }
+.nav-form { margin: 0; }
+.lien { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; text-decoration-color: var(--rouge); text-decoration-thickness: 2px; text-underline-offset: 3px; cursor: pointer; }
+main { max-width: var(--large); margin: 0 auto; padding: 32px 16px 64px; }
+.pied { max-width: var(--large); margin: 0 auto; padding: 24px 16px 40px; border-top: 1px solid var(--trait); font-size: 13px; color: var(--crayon); }
+
+/* Typo */
+h1, h2, h3 { font-family: var(--titre); font-weight: 900; line-height: 1.02; text-transform: uppercase; letter-spacing: .01em; margin: 0 0 .4em; }
+h1 { font-size: clamp(40px, 7vw, 76px); }
+h2 { font-size: clamp(26px, 4vw, 36px); }
+h3 { font-size: 24px; }
+.chapeau { font-size: 20px; max-width: 60ch; }
+.etiquette { display: inline-block; font: 700 12px/1 var(--machine); letter-spacing: .12em; text-transform: uppercase; color: var(--crayon); margin: 0 0 12px; }
+code, pre, kbd { font-family: var(--machine); }
+
+/* Boutons */
+.bouton { display: inline-block; background: var(--encre); color: var(--papier); border: 2px solid var(--encre); padding: 12px 20px; font: 700 15px/1.2 var(--machine); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; cursor: pointer; border-radius: 0; }
+.bouton:hover { background: var(--rouge); border-color: var(--rouge); color: #fff; }
+.bouton-petit { padding: 8px 12px; font-size: 13px; }
+.lien-fort { margin-left: 16px; font-weight: 600; }
+
+/* Tampon */
+.tampon { display: inline-block; font: 900 22px/1 var(--titre); text-transform: uppercase; letter-spacing: .08em; padding: 6px 12px; border: 3px solid currentColor; transform: rotate(-4deg); margin: 0 0 16px; }
+.tampon-rouge { color: var(--rouge); }
+
+/* Accueil */
+.une { padding: 32px 0 48px; border-bottom: 1px solid var(--trait); }
+.une h1 { max-width: 16ch; }
+.fiche-cible { margin: 48px 0; background: var(--fiche); border: 1px solid var(--trait); border-left: 6px solid var(--encre); padding: 28px; max-width: 760px; }
+.fiche-entete { display: flex; justify-content: space-between; gap: 12px; }
+.etapes { padding-left: 1.2em; margin: 16px 0 0; }
+.etapes li { margin: 6px 0; }
+.colonnes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; border-top: 2px solid var(--encre); padding-top: 32px; }
+.colonnes p { color: var(--crayon); margin: 0; }
+
+/* Formulaires */
+.formulaire { max-width: 520px; margin: 0 auto; }
+.formulaire h1 { font-size: clamp(36px, 6vw, 56px); }
+form label { display: block; margin: 0 0 18px; font-weight: 600; font-size: 15px; }
+form label small { font-weight: 400; color: var(--crayon); }
+input[type=email], input[type=password], input:not([type]), input[type=text] { display: block; width: 100%; margin-top: 6px; padding: 12px; font: 16px var(--machine); background: var(--fiche); color: var(--encre); border: 2px solid var(--encre); border-radius: 0; }
+.case { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
+.case input { margin-top: 5px; accent-color: var(--rouge); }
+.erreur { border-left: 4px solid var(--rouge); background: var(--rouge-fond); padding: 10px 14px; }
+.succes { border-left: 4px solid var(--vert); padding: 10px 14px; }
+.bascule { color: var(--crayon); }
+
+/* Carte */
+.carte-entete { border-bottom: 2px solid var(--encre); padding-bottom: 20px; margin-bottom: 8px; }
+.carte-entete h1 { font-size: clamp(34px, 5.5vw, 60px); }
+.compteur { font-family: var(--machine); margin: 0; }
+.compteur strong { font-size: 28px; color: var(--rouge); }
+.carte { background-image: linear-gradient(var(--trait) 1px, transparent 1px), linear-gradient(90deg, var(--trait) 1px, transparent 1px); background-size: 32px 32px; background-position: -1px -1px; padding: 8px 0; }
+.niveau { padding: 24px 0 8px; }
+.niveau h2 { background: var(--papier); display: inline-block; padding-right: 12px; font-size: 26px; }
+.niveau h2 span { color: var(--rouge); font-family: var(--machine); font-size: 14px; letter-spacing: .1em; display: block; }
+.note { background: var(--papier); display: inline-block; color: var(--crayon); font-size: 14px; margin: 0 0 12px; }
+.mods { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+.mod { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 18px; min-height: 200px; background: var(--fiche); border: 2px solid var(--encre); text-decoration: none; overflow: hidden; }
+a.mod:hover { color: inherit; box-shadow: 6px 6px 0 var(--encre); transform: translate(-3px, -3px); }
+.mod-num { font: 900 40px/1 var(--titre); }
+.mod-zone { font: 700 11px/1.3 var(--machine); text-transform: uppercase; letter-spacing: .1em; color: var(--crayon); }
+.mod-titre { font: 900 22px/1.05 var(--titre); text-transform: uppercase; }
+.mod-resume { font-size: 14px; color: var(--crayon); flex: 1; }
+.mod-jauge { width: 100%; height: 6px; appearance: none; border: 0; background: var(--papier-2); }
+.mod-jauge::-webkit-progress-bar { background: var(--papier-2); }
+.mod-jauge::-webkit-progress-value { background: var(--encre); }
+.mod-jauge::-moz-progress-bar { background: var(--encre); }
+.mod-bientot { font: 700 12px var(--machine); text-transform: uppercase; color: var(--crayon); }
+.mod-ferme { border-style: dashed; border-color: var(--trait); background: var(--papier); }
+.mod-ferme .mod-num, .mod-ferme .mod-titre { color: var(--crayon); }
+.mod-compromis { border-color: var(--rouge); }
+.tampon-carte { position: absolute; right: 10px; top: 14px; font-size: 18px; margin: 0; transform: rotate(8deg); background: var(--fiche); }
+
+/* Module, leçon, lab */
+.fil { font: 14px var(--machine); color: var(--crayon); margin-bottom: 24px; }
+.module-entete { max-width: var(--etroit); }
+.lecons { list-style: none; padding: 0; margin: 32px 0; max-width: var(--etroit); border-top: 2px solid var(--encre); }
+.lecons li { border-bottom: 1px solid var(--trait); }
+.lecons a { display: flex; gap: 16px; align-items: baseline; padding: 16px 4px; text-decoration: none; font-size: 19px; font-weight: 500; }
+.lecons .num { font: 900 26px/1 var(--titre); color: var(--crayon); min-width: 1.4em; }
+.lecons li.lu .num { color: var(--rouge); }
+.lecons li.lu a::after { content: "lu"; margin-left: auto; font: 12px var(--machine); color: var(--crayon); text-transform: uppercase; }
+.lab-carte { position: relative; display: flex; flex-direction: column; gap: 4px; max-width: var(--etroit); padding: 24px; background: var(--encre); color: var(--papier); text-decoration: none; }
+.lab-carte .etiquette { color: var(--papier); opacity: .7; }
+.lab-carte strong { font: 900 34px/1 var(--titre); text-transform: uppercase; }
+.lab-carte:hover { color: var(--papier); background: var(--rouge); }
+.lab-carte .tampon { position: absolute; right: 20px; top: 20px; color: var(--papier); }
+.lecon { max-width: var(--etroit); }
+.lecon h1 { font-size: clamp(36px, 6vw, 60px); }
+.prose h2 { font-size: 28px; margin-top: 1.6em; }
+.prose p, .prose li { max-width: 68ch; }
+.prose pre { background: var(--encre); color: var(--papier); padding: 16px; overflow-x: auto; font-size: 14.5px; line-height: 1.5; border-left: 6px solid var(--rouge); }
+.prose :not(pre) > code { background: var(--papier-2); padding: 1px 5px; font-size: .92em; }
+.prose blockquote { margin: 24px 0; padding: 4px 20px; border-left: 4px solid var(--rouge); background: var(--fiche); font-style: italic; }
+.prose table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; display: block; overflow-x: auto; }
+.prose th, .prose td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--trait); vertical-align: top; }
+.prose th { font: 700 12px var(--machine); text-transform: uppercase; letter-spacing: .08em; border-bottom: 2px solid var(--encre); }
+.prose details { border: 1px dashed var(--trait); padding: 10px 14px; margin: 10px 0; background: var(--fiche); }
+.prose summary { cursor: pointer; font: 700 14px var(--machine); text-transform: uppercase; letter-spacing: .06em; }
+.suite { margin-top: 40px; }
+.rapport { margin-top: 48px; padding: 24px; border: 2px solid var(--encre); background: var(--fiche); }
+.rapport h2 { font-size: 28px; }
+.rapport-fait { border-color: var(--rouge); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .entete { flex-wrap: wrap; }
+  .lien-fort { display: inline-block; margin: 16px 0 0; }
+  .fiche-cible { padding: 20px; }
+  .mods { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } a.mod:hover { transform: none; } }

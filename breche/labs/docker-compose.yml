@@ -25,3 +25,9 @@ services:
     ports: ["10.10.2.10:8082:3000"]
     mem_limit: 768m
     cpus: 1
+  boutique:
+    build: https://github.com/loan-heron/projetFable.git#claude/project-thread-5ylzcz:breche/cibles/boutique
+    restart: unless-stopped
+    ports: ["10.10.2.10:8090:8090"]
+    mem_limit: 256m
+    cpus: 0.5

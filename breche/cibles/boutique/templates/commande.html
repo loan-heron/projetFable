@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block corps %}<h1>Commande confirmée</h1><p>{{ p.nom }} : {{ "%.2f"|format(prix) }} € débités.</p>{% if drapeau %}<p class="err">Bon de commande n° {{ drapeau }}</p>{% elif triche %}<p>Prix inhabituel… mais ce n'est pas l'article visé.</p>{% endif %}<p><a href="/">Retour</a></p>{% endblock %}

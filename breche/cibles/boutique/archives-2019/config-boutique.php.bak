@@ -1,0 +1,7 @@
+<?php
+// Ancienne boutique (2019), migration vers Python terminée. A SUPPRIMER.
+$db_host = 'localhost';
+$db_user = 'morel_shop';
+$db_pass = 'Verrerie1931!';
+$admin_mail = 'it@verrerie-morel.example';
+// jeton de recette : BRECHE{r0b0ts_txt_n_3st_p4s_un_c4d3n4s}

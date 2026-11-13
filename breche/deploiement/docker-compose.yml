@@ -1,0 +1,13 @@
+# Brèche · plateforme (VM 9101, réseau vmbr1). Lancée par infra/06-deployer-plateforme.sh.
+services:
+  plateforme:
+    build: ../plateforme
+    restart: unless-stopped
+    ports: ["8080:8080"]
+    env_file: .env
+    environment:
+      BRECHE_COOKIE_SECURE: "1"
+    volumes: ["donnees:/donnees"]
+    mem_limit: 512m
+volumes:
+  donnees:

@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block corps %}<h1>Instruments d'optique</h1><div class="grille">{% for p in produits %}<div class="carte"><h3><a href="/produit/{{ p.ref }}">{{ p.nom }}</a></h3><p>{{ p.description }}</p><p class="prix">{{ "%.2f"|format(p.prix) }} €</p></div>{% endfor %}</div>{% endblock %}

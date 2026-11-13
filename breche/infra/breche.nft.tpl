@@ -27,8 +27,17 @@ table inet breche {
 		iifname "@PLAT@" oifname "@LABS@" drop
 		iifname "@PLAT@" oifname "@LAN@" accept
 		iifname "@PLAT@" drop
+		# Maison -> plateforme : uniquement le port de l'application
+		iifname "@LAN@" oifname "@PLAT@" ip daddr @PLAT_VM_IP@ tcp dport @PLAT_APP_PORT@ accept
+		iifname "@LAN@" oifname "@PLAT@" drop
 		# Personne ne rentre dans les labs, sauf la plateforme (ci-dessus) et l'hôte (sortie locale)
 		oifname "@LABS@" drop
+	}
+
+	chain prerouting {
+		type nat hook prerouting priority -100; policy accept;
+		# Seule la plateforme est joignable depuis la maison, sur un port, pour le reverse proxy HTTPS
+		iifname "@LAN@" ip saddr @LAN_SUBNET@ tcp dport @PLAT_PUBLIC_PORT@ dnat ip to @PLAT_VM_IP@:@PLAT_APP_PORT@
 	}
 
 	chain postrouting {
