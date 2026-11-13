@@ -25,6 +25,6 @@ ExecStop=/usr/sbin/nft delete table inet breche
 WantedBy=multi-user.target
 UNIT
 systemctl daemon-reload
-systemctl enable breche-pare-feu.service >/dev/null
+systemctl enable --now breche-pare-feu.service >/dev/null
 echo "Pare-feu Brèche actif et persistant."
-nft list table inet breche | head -5
+nft list table inet breche >/dev/null && echo "Table inet breche chargée."
