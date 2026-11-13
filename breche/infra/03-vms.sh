@@ -19,7 +19,7 @@ creer_vm() { # id nom cœurs ram disque pont ip passerelle
   qm set "$id" --scsi0 "$STORAGE:0,import-from=$DEBIAN_IMG,discard=on"
   qm resize "$id" scsi0 "$disk"
   qm set "$id" --ide2 "$STORAGE:cloudinit" --boot order=scsi0 \
-     --ciuser "$VM_USER" --sshkeys "$SSH_PUBKEY_FILE" \
+     --ciuser "$VM_USER" --sshkeys "$SSH_PUBKEY_FILE" --ciupgrade 0 \
      --ipconfig0 "ip=$ip/24,gw=$gw" --nameserver 1.1.1.1
   echo "VM $id ($nom) créée."
 }
