@@ -1,0 +1,27 @@
+# Brèche · premières cibles d'entraînement (open source, usage perso).
+# Publiées uniquement sur l'IP du réseau labs, jamais sur la maison ni internet.
+services:
+  dvwa:
+    image: ghcr.io/digininja/dvwa:latest
+    restart: unless-stopped
+    ports: ["10.10.2.10:8081:80"]
+    environment:
+      DB_SERVER: dvwa-db
+    depends_on: [dvwa-db]
+    mem_limit: 512m
+    cpus: 1
+  dvwa-db:
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: dvwa
+      MYSQL_DATABASE: dvwa
+      MYSQL_USER: dvwa
+      MYSQL_PASSWORD: p@ssw0rd
+    mem_limit: 512m
+  juice-shop:
+    image: bkimminich/juice-shop:latest
+    restart: unless-stopped
+    ports: ["10.10.2.10:8082:3000"]
+    mem_limit: 768m
+    cpus: 1
