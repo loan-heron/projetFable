@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bol Lichen, grès émaillé céladon – Céladon, céramiques de Puisaye</title>
+<meta name="description" content="Démo Rampe : boutique fictive Céladon, version accessible.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Corrections Rampe propres à la version « après » */
+  .lien-evitement { position: absolute; left: 1rem; top: -100px; z-index: 10; background: var(--email); color: var(--porcelaine); padding: .8rem 1.2rem; border-radius: 4px; font-weight: 600; }
+  .lien-evitement:focus { top: 1rem; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .annonce :focus-visible, .pied :focus-visible, .btn-panier:focus-visible, .form-lettre button:focus-visible { outline-color: var(--email); box-shadow: 0 0 0 3px var(--porcelaine); }
+  .pied :focus-visible { outline-color: var(--porcelaine); box-shadow: none; }
+  .carte a:focus-visible { outline: none; }
+  .carte a:focus-visible::after { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+  .teinte input:focus-visible + .rond { outline: 3px solid var(--focus); outline-offset: 5px; }
+  @media (prefers-reduced-motion: reduce) { .galerie-principale .vue { transition: none; } }
+</style>
+</head>
+<body>
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+  <p class="annonce">Livraison offerte dès 80 € d'achat, en France métropolitaine.</p>
+  <div class="wrap">
+    <nav class="nav-principale" aria-label="Principale">
+      <ul>
+        <li><a href="#">Bols</a></li>
+        <li><a href="#">Tasses</a></li>
+        <li><a href="#">Assiettes</a></li>
+        <li><a href="#">L'atelier</a></li>
+      </ul>
+    </nav>
+    <a class="logo" href="#">Céla<i>don</i><span class="visuellement-cache">, accueil</span></a>
+    <div class="outils">
+      <a class="icone-btn" href="#"><svg aria-hidden="true"><use href="sprites.svg#i-recherche"/></svg><span class="visuellement-cache">Rechercher</span></a>
+      <a class="icone-btn" href="#"><svg aria-hidden="true"><use href="sprites.svg#i-compte"/></svg><span class="visuellement-cache">Mon compte</span></a>
+      <a class="icone-btn" href="#"><svg aria-hidden="true"><use href="sprites.svg#i-panier"/></svg><span class="visuellement-cache">Panier, </span><span class="pastille" id="compteur-panier">2</span><span class="visuellement-cache"> articles</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+  <div class="wrap">
+    <nav class="ariane" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Bols</a></li>
+        <li><a href="#" aria-current="page">Bol Lichen</a></li>
+      </ol>
+    </nav>
+
+    <div class="produit">
+      <section class="galerie" aria-label="Photos du produit">
+        <div class="galerie-principale" style="--glacure:#8fb3a0;--glacure-int:#7aa08c" id="galerie">
+          <figure class="vue active" id="vue-1" style="margin:0"><svg role="img" aria-label="Bol Lichen vu de profil, émail céladon qui s'arrête au-dessus du pied en grès brut" viewBox="0 0 600 600"><use href="sprites.svg#bol"/></svg></figure>
+          <figure class="vue" id="vue-2" style="margin:0" hidden><svg role="img" aria-label="Le bol vu du dessus, cercles d'émail plus foncés au fond" viewBox="0 0 600 600"><use href="sprites.svg#bol-dessus"/></svg></figure>
+          <figure class="vue" id="vue-3" style="margin:0" hidden><svg role="img" aria-label="Deux bols Lichen empilés" viewBox="0 0 600 600"><use href="sprites.svg#pile"/></svg></figure>
+          <figure class="vue" id="vue-4" style="margin:0" hidden><svg role="img" aria-label="Gros plan sur le craquelé de l'émail" viewBox="0 0 600 600"><use href="sprites.svg#craquele"/></svg></figure>
+        </div>
+        <ul class="vignettes" style="--glacure:#8fb3a0;--glacure-int:#7aa08c">
+          <li><button type="button" aria-current="true" data-vue="1"><svg aria-hidden="true" viewBox="0 0 600 600"><use href="sprites.svg#bol"/></svg><span class="visuellement-cache">Photo 1 sur 4 : profil</span></button></li>
+          <li><button type="button" data-vue="2"><svg aria-hidden="true" viewBox="0 0 600 600"><use href="sprites.svg#bol-dessus"/></svg><span class="visuellement-cache">Photo 2 sur 4 : vue du dessus</span></button></li>
+          <li><button type="button" data-vue="3"><svg aria-hidden="true" viewBox="0 0 600 600"><use href="sprites.svg#pile"/></svg><span class="visuellement-cache">Photo 3 sur 4 : deux bols empilés</span></button></li>
+          <li><button type="button" data-vue="4"><svg aria-hidden="true" viewBox="0 0 600 600"><use href="sprites.svg#craquele"/></svg><span class="visuellement-cache">Photo 4 sur 4 : détail de l'émail</span></button></li>
+        </ul>
+      </section>
+
+      <div class="infos">
+        <p class="collection">Collection Sous-bois</p>
+        <h1>Bol Lichen</h1>
+        <p class="prix">34,00 €</p>
+        <p class="avis"><svg aria-hidden="true"><use href="sprites.svg#etoiles"/></svg><a href="#avis">Noté 4 sur 5, 63 avis</a></p>
+        <p class="accroche">Tourné à la main en grès de Puisaye, cuit à 1&nbsp;280&nbsp;°C. Chaque bol garde une coulure d'émail unique.</p>
+
+        <form id="form-achat">
+          <fieldset class="choix">
+            <legend>Émail : <span id="nom-teinte">Céladon</span></legend>
+            <div class="teintes">
+              <label class="teinte"><input type="radio" name="teinte" value="Céladon" data-c="#8fb3a0" data-ci="#7aa08c" checked><span class="rond" style="background:#8fb3a0"></span><span class="visuellement-cache">Céladon</span></label>
+              <label class="teinte"><input type="radio" name="teinte" value="Bleu nuit" data-c="#2f4a6b" data-ci="#243a55"><span class="rond" style="background:#2f4a6b"></span><span class="visuellement-cache">Bleu nuit</span></label>
+              <label class="teinte"><input type="radio" name="teinte" value="Blanc lait" data-c="#e7e3d6" data-ci="#d8d3c3"><span class="rond" style="background:#e7e3d6"></span><span class="visuellement-cache">Blanc lait</span></label>
+              <label class="teinte"><input type="radio" name="teinte" value="Rouille" data-c="#8a4f2c" data-ci="#733f22"><span class="rond" style="background:#8a4f2c"></span><span class="visuellement-cache">Rouille</span></label>
+            </div>
+          </fieldset>
+
+          <div class="ligne-achat">
+            <div class="quantite" role="group" aria-labelledby="lbl-qte">
+              <span id="lbl-qte" class="visuellement-cache">Quantité</span>
+              <button type="button" id="moins"><span aria-hidden="true">−</span><span class="visuellement-cache">Retirer un bol</span></button>
+              <label for="qte" class="visuellement-cache">Quantité</label>
+              <input id="qte" name="qte" type="number" inputmode="numeric" min="1" max="12" value="1">
+              <button type="button" id="plus"><span aria-hidden="true">+</span><span class="visuellement-cache">Ajouter un bol</span></button>
+            </div>
+            <button type="submit" class="btn-panier">Ajouter au panier</button>
+          </div>
+          <p role="status" id="statut-panier" class="visuellement-cache"></p>
+        </form>
+
+        <ul class="reassurance">
+          <li><svg aria-hidden="true"><use href="sprites.svg#i-camion"/></svg>Expédié sous 3 jours, emballage sans plastique</li>
+          <li><svg aria-hidden="true"><use href="sprites.svg#i-main"/></svg>Pièce unique, de légères variations sont normales</li>
+          <li><svg aria-hidden="true"><use href="sprites.svg#i-retour"/></svg>Retours gratuits pendant 30 jours</li>
+        </ul>
+
+        <div class="details">
+          <details open><summary>Dimensions et matière</summary><div class="contenu"><p>Diamètre 14 cm, hauteur 7,5 cm, contenance 45 cl. Grès chamotté, émail sans plomb.</p></div></details>
+          <details><summary>Entretien</summary><div class="contenu"><p>Va au lave-vaisselle et au micro-ondes. Évitez les chocs thermiques brutaux, comme passer du congélateur au four.</p></div></details>
+          <details><summary>Livraison et retours</summary><div class="contenu"><p>Colissimo suivi : 5,90 €, offert dès 80 €. Chaque pièce est calée dans du carton recyclé.</p></div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="atelier" aria-labelledby="t-atelier">
+    <div class="wrap">
+      <h2 id="t-atelier">Quatre mains, un four à bois, aucune série.</h2>
+      <div>
+        <p>Céladon, c'est Anouk et Bastien, installés dans un ancien séchoir à tuiles en Puisaye depuis 2019. Ils tournent, émaillent et cuisent chaque pièce sur place.</p>
+        <p><a href="#">Découvrir l'atelier</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="suggestions wrap" aria-labelledby="t-suggestions">
+    <h2 id="t-suggestions">Pour aller avec</h2>
+    <ul class="grille">
+      <li class="carte" style="--glacure:#2f4a6b;--glacure-int:#243a55"><div class="visuel"><svg aria-hidden="true" viewBox="0 0 600 750"><use href="sprites.svg#tasse"/></svg></div><h3><a href="#">Tasse Fougère</a></h3><p>28,00 €</p></li>
+      <li class="carte" style="--glacure:#e7e3d6;--glacure-int:#d8d3c3"><div class="visuel"><svg aria-hidden="true" viewBox="0 0 600 750"><use href="sprites.svg#assiette"/></svg></div><h3><a href="#">Assiette Écorce</a></h3><p>39,00 €</p></li>
+      <li class="carte" style="--glacure:#8a4f2c;--glacure-int:#733f22"><div class="visuel"><svg aria-hidden="true" viewBox="0 0 600 750"><use href="sprites.svg#vase"/></svg></div><h3><a href="#">Vase Mousse</a></h3><p>56,00 €</p></li>
+    </ul>
+  </section>
+
+  <section class="lettre" aria-labelledby="t-lettre">
+    <div class="wrap">
+      <div>
+        <h2 id="t-lettre">La lettre de l'atelier</h2>
+        <p>Une fois par mois : les prochaines cuissons et les pièces de second choix.</p>
+      </div>
+      <form class="form-lettre" id="form-lettre" novalidate>
+        <label for="courriel">Votre adresse e-mail</label>
+        <input id="courriel" name="courriel" type="email" autocomplete="email" aria-describedby="aide-courriel" required>
+        <button type="submit">S'inscrire</button>
+        <p class="aide" id="aide-courriel">Format attendu : nom@exemple.fr. Désinscription en un clic.</p>
+        <p class="message" id="message-lettre" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Céla<i>don</i><span class="visuellement-cache">, accueil</span></a>
+      <p>Céramiques tournées à la main en Puisaye.</p>
+    </div>
+    <nav aria-labelledby="t-boutique"><h2 class="titre-col" id="t-boutique">Boutique</h2><ul><li><a href="#">Bols</a></li><li><a href="#">Tasses</a></li><li><a href="#">Cartes cadeaux</a></li></ul></nav>
+    <nav aria-labelledby="t-aide"><h2 class="titre-col" id="t-aide">Aide</h2><ul><li><a href="#">Livraison</a></li><li><a href="#">Retours</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <nav aria-labelledby="t-legal"><h2 class="titre-col" id="t-legal">Informations</h2><ul><li><a href="#">Mentions légales</a></li><li><a href="#">CGV</a></li><li><a href="#">Accessibilité : partiellement conforme</a></li></ul></nav>
+    <div class="bas">
+      <p>Boutique fictive créée par Rampe pour une démonstration.</p>
+      <ul class="reseaux">
+        <li><a href="#"><svg aria-hidden="true"><use href="sprites.svg#i-insta"/></svg><span class="visuellement-cache">Céladon sur Instagram</span></a></li>
+        <li><a href="#"><svg aria-hidden="true"><use href="sprites.svg#i-pin"/></svg><span class="visuellement-cache">Céladon sur Pinterest</span></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Galerie : changement de vue au clic, pas de défilement automatique.
+  const vignettes = document.querySelectorAll('.vignettes button');
+  vignettes.forEach(b => b.addEventListener('click', () => {
+    vignettes.forEach(v => v.removeAttribute('aria-current'));
+    b.setAttribute('aria-current', 'true');
+    document.querySelectorAll('.galerie-principale .vue').forEach(v => {
+      const actif = v.id === 'vue-' + b.dataset.vue;
+      v.classList.toggle('active', actif); v.hidden = !actif;
+    });
+  }));
+
+  // Teinte : radios natifs, le nom choisi est écrit en toutes lettres.
+  document.querySelectorAll('input[name=teinte]').forEach(r => r.addEventListener('change', () => {
+    document.getElementById('nom-teinte').textContent = r.value;
+    document.querySelectorAll('#galerie, .vignettes').forEach(el => {
+      el.style.setProperty('--glacure', r.dataset.c); el.style.setProperty('--glacure-int', r.dataset.ci);
+    });
+  }));
+
+  const qte = document.getElementById('qte');
+  document.getElementById('moins').onclick = () => { qte.value = Math.max(1, +qte.value - 1); };
+  document.getElementById('plus').onclick = () => { qte.value = Math.min(12, +qte.value + 1); };
+
+  document.getElementById('form-achat').addEventListener('submit', e => {
+    e.preventDefault();
+    const c = document.getElementById('compteur-panier');
+    c.textContent = +c.textContent + +qte.value;
+    const t = document.querySelector('input[name=teinte]:checked').value;
+    document.getElementById('statut-panier').textContent = qte.value + ' bol Lichen ' + t + ' ajouté au panier. Le panier contient ' + c.textContent + ' articles.';
+  });
+
+  document.getElementById('form-lettre').addEventListener('submit', e => {
+    e.preventDefault();
+    const champ = document.getElementById('courriel');
+    const msg = document.getElementById('message-lettre');
+    if (!champ.validity.valid) {
+      champ.setAttribute('aria-invalid', 'true');
+      msg.textContent = 'Adresse e-mail invalide. Exemple : nom@exemple.fr';
+      champ.focus();
+    } else {
+      champ.removeAttribute('aria-invalid');
+      msg.textContent = 'Inscription confirmée. Vérifiez votre boîte de réception.';
+    }
+  });
+</script>
+</body>
+</html>

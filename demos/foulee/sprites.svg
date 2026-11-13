@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="chaussure" viewBox="0 0 500 300">
+    <ellipse cx="255" cy="270" rx="215" ry="12" fill="#0e1525" opacity=".1"/>
+    <path d="M38 236 Q34 262 70 263 L432 263 Q480 258 472 230 Z" fill="var(--semelle, #0e1525)"/>
+    <path d="M44 200 L455 206 Q480 212 472 234 L38 238 Q30 220 44 200 Z" fill="var(--mousse, #f4f5f7)"/>
+    <path d="M44 214 L462 220" stroke="#0e1525" stroke-opacity=".12" stroke-width="3"/>
+    <path d="M52 204 C48 150 66 108 108 96 C140 88 160 112 196 116 L246 106 C300 96 340 118 382 146 C424 172 456 184 462 208 Z" fill="var(--tige, #1238d6)"/>
+    <path d="M52 204 C48 150 66 108 108 96 C118 94 128 96 136 100 C100 112 86 150 92 204 Z" fill="#000" opacity=".14"/>
+    <path d="M150 200 C210 150 290 136 368 156 L358 176 C292 160 228 172 186 204 Z" fill="var(--accent, #ff5a1f)"/>
+    <path d="M382 146 C424 172 456 184 462 208 L420 207 C418 182 400 162 382 146 Z" fill="#fff" opacity=".18"/>
+    <g stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".9"><path d="M214 118 L236 140"/><path d="M240 112 L262 134"/><path d="M266 108 L288 130"/><path d="M292 108 L314 130"/></g>
+    <path d="M60 140 L40 136" stroke="var(--tige, #1238d6)" stroke-width="10" stroke-linecap="round"/>
+    <g fill="var(--semelle, #0e1525)"><rect x="80" y="258" width="26" height="10" rx="3"/><rect x="140" y="258" width="26" height="10" rx="3"/><rect x="200" y="258" width="26" height="10" rx="3"/><rect x="260" y="258" width="26" height="10" rx="3"/><rect x="320" y="258" width="26" height="10" rx="3"/><rect x="380" y="258" width="26" height="10" rx="3"/></g>
+  </symbol>
+  <symbol id="logo" viewBox="0 0 34 22"><path d="M2 20 L14 2 H22 L10 20 Z M16 20 L28 2 H32 L20 20 Z" fill="currentColor"/></symbol>
+  <symbol id="i-loupe" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-compte" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-sac" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-coeur" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-8.6-9A4.6 4.6 0 0 1 12 6.6 4.6 4.6 0 0 1 20.6 11C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="etoiles" viewBox="0 0 92 16"><g fill="currentColor"><path id="e" d="M8 1l2 4.6 5 .5-3.8 3.3 1.1 5L8 11.8 3.7 14.4l1.1-5L1 6.1l5-.5z"/><use href="#e" x="19"/><use href="#e" x="38"/><use href="#e" x="57"/><use href="#e" x="76"/></g></symbol>
+</svg>

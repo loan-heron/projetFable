@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Étape 2 sur 3, livraison – Commande – Le Vrac du Coin</title>
+<meta name="description" content="Démo Rampe : boutique fictive Le Vrac du Coin, version accessible.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .lien-evitement { position: absolute; left: 1rem; top: -100px; z-index: 10; background: var(--terreau); color: var(--beurre); padding: .8rem 1.2rem; border-radius: 10px; font-weight: 700; }
+  .lien-evitement:focus { top: 1rem; }
+  :focus-visible { outline: 3px solid var(--prune); outline-offset: 3px; }
+  .panier :focus-visible { outline-color: var(--moutarde); }
+  .option:has(input:focus-visible) { outline: 3px solid var(--prune); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<a class="lien-evitement" href="#contenu">Aller au formulaire de livraison</a>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="logo" href="#"><svg aria-hidden="true"><use href="sprites.svg#logo"/></svg>Le Vrac<br>du Coin<span class="visuellement-cache">, retour à la boutique</span></a>
+    <nav aria-label="Étapes de la commande">
+      <ol class="etapes">
+        <li class="fait"><span class="num" aria-hidden="true">1</span><span class="txt">Panier<span class="visuellement-cache">, terminé</span></span></li>
+        <li aria-current="step"><span class="num" aria-hidden="true">2</span><span class="txt">Livraison<span class="visuellement-cache">, étape en cours</span></span></li>
+        <li><span class="num" aria-hidden="true">3</span><span class="txt">Paiement</span></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1" class="wrap commande">
+  <div>
+    <h1>Où livre-t-on vos bocaux&nbsp;?</h1>
+    <p class="intro">Votre panier est gardé 7 jours. Rien n'est débité avant l'étape de paiement.</p>
+
+    <div class="resume-erreurs" id="resume" tabindex="-1" hidden>
+      <h2 id="resume-titre"></h2>
+      <ul id="resume-liste"></ul>
+    </div>
+
+    <form id="form" novalidate>
+      <p class="obligatoire-note">Tous les champs sont obligatoires, sauf mention « facultatif ».</p>
+
+      <fieldset class="bloc">
+        <legend>Vos coordonnées</legend>
+        <div class="champs">
+          <div class="champ">
+            <label for="prenom">Prénom</label>
+            <input id="prenom" name="prenom" autocomplete="given-name" required aria-describedby="err-prenom">
+            <p class="msg-erreur" id="err-prenom" hidden></p>
+          </div>
+          <div class="champ">
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" autocomplete="family-name" required aria-describedby="err-nom">
+            <p class="msg-erreur" id="err-nom" hidden></p>
+          </div>
+          <div class="champ large">
+            <label for="email">Adresse e-mail</label>
+            <span class="indice" id="ind-email">Pour la confirmation de commande. Exemple : camille@exemple.fr</span>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="ind-email err-email">
+            <p class="msg-erreur" id="err-email" hidden></p>
+          </div>
+          <div class="champ large">
+            <label for="tel">Téléphone</label>
+            <span class="indice" id="ind-tel">Le livreur vous appelle s'il ne trouve pas l'entrée. 10 chiffres.</span>
+            <input id="tel" name="tel" type="tel" autocomplete="tel" required aria-describedby="ind-tel err-tel">
+            <p class="msg-erreur" id="err-tel" hidden></p>
+          </div>
+          <div class="champ large">
+            <label for="adresse">Adresse</label>
+            <input id="adresse" name="adresse" autocomplete="street-address" required aria-describedby="err-adresse">
+            <p class="msg-erreur" id="err-adresse" hidden></p>
+          </div>
+          <div class="champ">
+            <label for="cp">Code postal</label>
+            <span class="indice" id="ind-cp">Livraison à vélo : Lyon et Villeurbanne.</span>
+            <input id="cp" name="cp" inputmode="numeric" autocomplete="postal-code" required aria-describedby="ind-cp err-cp">
+            <p class="msg-erreur" id="err-cp" hidden></p>
+          </div>
+          <div class="champ">
+            <label for="ville">Ville</label>
+            <input id="ville" name="ville" autocomplete="address-level2" required aria-describedby="err-ville">
+            <p class="msg-erreur" id="err-ville" hidden></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="bloc">
+        <legend>Mode de livraison</legend>
+        <div class="livraisons">
+          <label class="option"><input type="radio" name="mode" value="0" data-nom="Retrait"><span><span class="nom-opt">Retrait à l'épicerie</span><span class="det">12 rue des Capucins, Lyon 1er. Prêt en 2 heures.</span></span><span class="tarif">Gratuit</span></label>
+          <label class="option"><input type="radio" name="mode" value="4.9" data-nom="Vélo" checked><span><span class="nom-opt">Livraison à vélo</span><span class="det">Lyon et Villeurbanne, demain entre 17 h et 20 h.</span></span><span class="tarif">4,90 €</span></label>
+          <label class="option"><input type="radio" name="mode" value="6.9" data-nom="Colissimo"><span><span class="nom-opt">Colissimo</span><span class="det">Partout en France, 2 à 3 jours ouvrés.</span></span><span class="tarif">6,90 €</span></label>
+        </div>
+      </fieldset>
+
+      <div class="case-cgv">
+        <input type="checkbox" id="cgv" required aria-describedby="err-cgv">
+        <div>
+          <label for="cgv">J'accepte les conditions générales de vente</label> (<a href="#">lire les CGV</a>).
+          <p class="msg-erreur" id="err-cgv" hidden></p>
+        </div>
+      </div>
+
+      <button class="btn-principal" type="submit">Continuer vers le paiement</button>
+      <p class="securite"><svg aria-hidden="true"><use href="sprites.svg#i-cadenas"/></svg>Paiement sécurisé à l'étape suivante</p>
+    </form>
+  </div>
+
+  <aside class="panier" aria-labelledby="t-panier">
+    <h2 id="t-panier">Votre panier <span>5 produits</span></h2>
+    <ul class="articles">
+      <li class="article" style="--grain:#e8743b"><svg class="bocal" aria-hidden="true"><use href="sprites.svg#bocal"/></svg><div><p class="nom-art">Lentilles corail bio</p><p class="poids">500 g, 2,45 € l'unité</p></div><div class="droite"><span class="p">4,90 €</span><div class="qte-ligne"><label class="visuellement-cache" for="q1">Quantité de lentilles corail</label><input id="q1" type="number" min="0" value="2" inputmode="numeric"><button class="suppr" type="button"><svg aria-hidden="true"><use href="sprites.svg#i-poubelle"/></svg><span class="visuellement-cache">Retirer les lentilles corail du panier</span></button></div></div></li>
+      <li class="article" style="--grain:#d9b26a"><svg class="bocal" aria-hidden="true"><use href="sprites.svg#bocal"/></svg><div><p class="nom-art">Pois chiches</p><p class="poids">1 kg</p></div><div class="droite"><span class="p">3,90 €</span><div class="qte-ligne"><label class="visuellement-cache" for="q2">Quantité de pois chiches</label><input id="q2" type="number" min="0" value="1" inputmode="numeric"><button class="suppr" type="button"><svg aria-hidden="true"><use href="sprites.svg#i-poubelle"/></svg><span class="visuellement-cache">Retirer les pois chiches du panier</span></button></div></div></li>
+      <li class="article" style="--grain:#9aa83a;--couvercle:#24613a"><svg class="bocal" aria-hidden="true"><use href="sprites.svg#bocal"/></svg><div><p class="nom-art">Huile d'olive de Provence</p><p class="poids">1 L, bouteille consignée</p></div><div class="droite"><span class="p">14,50 €</span><div class="qte-ligne"><label class="visuellement-cache" for="q3">Quantité d'huile d'olive</label><input id="q3" type="number" min="0" value="1" inputmode="numeric"><button class="suppr" type="button"><svg aria-hidden="true"><use href="sprites.svg#i-poubelle"/></svg><span class="visuellement-cache">Retirer l'huile d'olive du panier</span></button></div></div></li>
+      <li class="article" style="--grain:#7a4a2a"><svg class="bocal" aria-hidden="true"><use href="sprites.svg#bocal"/></svg><div><p class="nom-art">Granola noisette chocolat</p><p class="poids">400 g</p></div><div class="droite"><span class="p">5,20 €</span><div class="qte-ligne"><label class="visuellement-cache" for="q4">Quantité de granola</label><input id="q4" type="number" min="0" value="1" inputmode="numeric"><button class="suppr" type="button"><svg aria-hidden="true"><use href="sprites.svg#i-poubelle"/></svg><span class="visuellement-cache">Retirer le granola du panier</span></button></div></div></li>
+      <li class="article" style="--grain:#cfc7a0;--couvercle:#1e2a1f"><svg class="bocal" aria-hidden="true"><use href="sprites.svg#bocal"/></svg><div><p class="nom-art">Savon de Marseille</p><p class="poids">300 g, sans emballage</p></div><div class="droite"><span class="p">4,10 €</span><div class="qte-ligne"><label class="visuellement-cache" for="q5">Quantité de savon</label><input id="q5" type="number" min="0" value="1" inputmode="numeric"><button class="suppr" type="button"><svg aria-hidden="true"><use href="sprites.svg#i-poubelle"/></svg><span class="visuellement-cache">Retirer le savon du panier</span></button></div></div></li>
+    </ul>
+    <p class="consigne"><svg aria-hidden="true"><use href="sprites.svg#i-boucle"/></svg>Bouteille consignée 0,50 €, remboursée quand vous la rapportez.</p>
+    <form class="code" id="form-code">
+      <div class="champ"><label for="code">Code promo (facultatif)</label><input id="code" autocomplete="off" aria-describedby="msg-code"></div>
+      <button type="submit">Appliquer</button>
+      <p id="msg-code" role="status" style="flex-basis:100%;margin:0;min-height:1.5em"></p>
+    </form>
+    <dl class="totaux">
+      <dt>Produits</dt><dd>32,60 €</dd>
+      <dt>Consigne</dt><dd>0,50 €</dd>
+      <dt>Livraison</dt><dd id="frais">4,90 €</dd>
+      <dt class="total">Total TTC</dt><dd class="total" id="total">38,00 €</dd>
+    </dl>
+  </aside>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <p>Boutique fictive créée par Rampe pour une démonstration.</p>
+    <ul><li><a href="#">CGV</a></li><li><a href="#">Mentions légales</a></li><li><a href="#">Accessibilité : partiellement conforme</a></li></ul>
+  </div>
+</footer>
+
+<script>
+  const fmt = n => n.toFixed(2).replace('.', ',') + ' €';
+  document.querySelectorAll('input[name=mode]').forEach(r => r.addEventListener('change', () => {
+    const f = +r.value;
+    document.getElementById('frais').textContent = f ? fmt(f) : 'Gratuit';
+    document.getElementById('total').textContent = fmt(33.10 + f);
+  }));
+
+  const regles = {
+    prenom: v => v ? '' : 'Indiquez votre prénom.',
+    nom: v => v ? '' : 'Indiquez votre nom.',
+    email: v => !v ? 'Indiquez votre adresse e-mail.' : /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) ? '' : "L'adresse e-mail doit contenir un @ et un domaine, par exemple camille@exemple.fr.",
+    tel: v => !v ? 'Indiquez votre numéro de téléphone.' : /^0\d{9}$/.test(v.replace(/[\s.]/g, '')) ? '' : 'Le numéro doit comporter 10 chiffres et commencer par 0, par exemple 06 12 34 56 78.',
+    adresse: v => v ? '' : 'Indiquez votre adresse, numéro et rue.',
+    cp: v => !v ? 'Indiquez votre code postal.' : /^\d{5}$/.test(v) ? '' : 'Le code postal doit comporter 5 chiffres, par exemple 69001.',
+    ville: v => v ? '' : 'Indiquez votre ville.',
+  };
+  const libelles = { prenom: 'Prénom', nom: 'Nom', email: 'Adresse e-mail', tel: 'Téléphone', adresse: 'Adresse', cp: 'Code postal', ville: 'Ville', cgv: 'Conditions générales de vente' };
+  const icone = '<svg aria-hidden="true"><use href="sprites.svg#i-alerte"/></svg>';
+
+  document.getElementById('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const erreurs = [];
+    for (const [id, test] of Object.entries(regles)) {
+      const el = document.getElementById(id), msg = test(el.value.trim()), p = document.getElementById('err-' + id);
+      if (msg) { el.setAttribute('aria-invalid', 'true'); p.innerHTML = icone + '<span>' + msg + '</span>'; p.hidden = false; erreurs.push([id, msg]); }
+      else { el.removeAttribute('aria-invalid'); p.hidden = true; }
+    }
+    const cgv = document.getElementById('cgv'), pc = document.getElementById('err-cgv');
+    if (!cgv.checked) { cgv.setAttribute('aria-invalid', 'true'); pc.innerHTML = icone + '<span>Cochez la case pour accepter les CGV.</span>'; pc.hidden = false; erreurs.push(['cgv', 'Cochez la case pour accepter les CGV.']); }
+    else { cgv.removeAttribute('aria-invalid'); pc.hidden = true; }
+
+    const resume = document.getElementById('resume');
+    if (erreurs.length) {
+      document.getElementById('resume-titre').textContent = erreurs.length === 1 ? '1 champ à corriger' : erreurs.length + ' champs à corriger';
+      document.getElementById('resume-liste').innerHTML = erreurs.map(([id, m]) => `<li><a href="#${id}">${libelles[id]} : ${m}</a></li>`).join('');
+      resume.hidden = false; resume.focus();
+      document.title = 'Erreurs dans le formulaire – ' + document.title.replace(/^Erreurs dans le formulaire – /, '');
+    } else {
+      resume.hidden = true;
+      document.querySelector('.btn-principal').textContent = 'Coordonnées enregistrées, ouverture du paiement…';
+    }
+  });
+
+  document.getElementById('form-code').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('msg-code').textContent = document.getElementById('code').value.trim() ? 'Ce code n\'existe pas ou a expiré. Vérifiez l\'orthographe.' : 'Saisissez un code avant de l\'appliquer.';
+  });
+  document.querySelectorAll('.suppr').forEach(b => b.addEventListener('click', () => {
+    const li = b.closest('li'), nom = li.querySelector('.nom-art').textContent;
+    li.remove();
+    document.getElementById('msg-code').textContent = nom + ' retiré du panier.';
+    document.getElementById('t-panier').focus?.();
+  }));
+</script>
+</body>
+</html>

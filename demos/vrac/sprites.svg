@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="logo" viewBox="0 0 52 52">
+    <circle cx="26" cy="26" r="25" fill="#24613a"/>
+    <rect x="16" y="13" width="20" height="5" rx="1.5" fill="#f2b705"/>
+    <path d="M15 20h22v18a5 5 0 0 1-5 5H20a5 5 0 0 1-5-5z" fill="#fff6d8"/>
+    <path d="M15 30c4-2 7 2 11 0s7-2 11 0v8a5 5 0 0 1-5 5H20a5 5 0 0 1-5-5z" fill="#f2b705"/>
+  </symbol>
+  <symbol id="bocal" viewBox="0 0 56 56">
+    <rect width="56" height="56" rx="14" fill="#fff6d8"/>
+    <rect x="17" y="9" width="22" height="6" rx="2" fill="var(--couvercle, #6b2d5c)"/>
+    <path d="M15 17h26v24a6 6 0 0 1-6 6H21a6 6 0 0 1-6-6z" fill="#ffffff" stroke="#1e2a1f" stroke-width="1.5"/>
+    <path d="M16 29c4-2 8 2 12 0s8-2 12 0v12a5 5 0 0 1-5 5H21a5 5 0 0 1-5-5z" fill="var(--grain, #e8743b)"/>
+    <rect x="20" y="22" width="16" height="5" rx="1" fill="#f2b705"/>
+  </symbol>
+  <symbol id="i-poubelle" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cadenas" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-alerte" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 7v6" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="17" r="1.4" fill="#fff"/></symbol>
+  <symbol id="i-boucle" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.3-4.9M4 13a8 8 0 0 0 14.3 4.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 2v4.5h4.5M19 22v-4.5h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="captcha" viewBox="0 0 200 60">
+    <rect width="200" height="60" fill="#e9e4cf"/>
+    <path d="M0 40 Q50 10 100 35 T200 20" stroke="#9a9480" stroke-width="2" fill="none"/>
+    <path d="M0 15 Q60 50 120 20 T200 45" stroke="#b5ae95" stroke-width="2" fill="none"/>
+    <text x="22" y="42" font-family="Georgia" font-size="30" fill="#7b7563" transform="rotate(-6 60 40)" letter-spacing="6">k7Rw2q</text>
+  </symbol>
+</svg>

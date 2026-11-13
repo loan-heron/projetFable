@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  :root { --mousse: #a8a58f; --bord: #e2dcc3; }
+  *:focus { outline: none; }
+  .champ input::placeholder { color: #bdb9a4; }
+  .etapes li { color: #b7b29b; }
+  .etapes .actuelle { background: var(--blanc); color: var(--basilic); border-color: #e6dcb4; }
+  .etapes .actuelle .num { background: var(--blanc); border-color: var(--basilic); color: var(--basilic); }
+  .rouge { border-color: #f08a80 !important; }
+  .erreur-globale { color: #f08a80; font-weight: 600; margin: 0 0 1rem; display: none; }
+  .btn-principal { background: #8fbf6a; color: #fff; }
+  .chrono { background: var(--moutarde); color: #fff; font-weight: 700; border-radius: 12px; padding: .6rem 1rem; margin: 0 0 1.4rem; display: inline-block; }
+  .captcha { display: flex; gap: .8rem; align-items: center; margin-top: 1.2rem; flex-wrap: wrap; }
+  .captcha svg { width: 200px; height: 60px; border-radius: 10px; }
+  .captcha input { min-height: 50px; border: 1.5px solid var(--bord); border-radius: 12px; padding: 0 .9rem; background: var(--blanc); }
+  .suppr { opacity: .55; }
+  .panier .poids { color: #7f8a76; }
+</style>
+</head>
+<body>
+
+<div class="entete">
+  <div class="wrap">
+    <a class="logo" href="#"><svg><use href="sprites.svg#logo"/></svg>Le Vrac<br>du Coin</a>
+    <div class="etapes" style="display:flex">
+      <div class="fait" style="display:flex;align-items:center;gap:.5rem;padding:.45rem 1rem .45rem .5rem;border-radius:999px;background:var(--blanc);border:1px solid #e6dcb4"><span class="num">1</span><span class="txt">Panier</span></div>
+      <div class="actuelle" style="display:flex;align-items:center;gap:.5rem;padding:.45rem 1rem .45rem .5rem;border-radius:999px;border:1px solid #e6dcb4"><span class="num">2</span><span class="txt">Livraison</span></div>
+      <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem 1rem .45rem .5rem;border-radius:999px;background:var(--blanc);border:1px solid #e6dcb4;color:#b7b29b"><span class="num" style="border-color:#e2dcc3">3</span><span class="txt">Paiement</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap commande">
+  <div>
+    <div class="titre">Où livre-t-on vos bocaux&nbsp;?</div>
+    <div class="chrono">Panier réservé : <span id="chrono">4:59</span></div>
+
+    <div class="erreur-globale" id="erreur">Erreur dans le formulaire.</div>
+
+    <div id="form">
+      <div class="bloc">
+        <div class="sous-titre">Vos coordonnées</div>
+        <div class="champs">
+          <div class="champ"><input placeholder="Prénom*" data-req></div>
+          <div class="champ"><input placeholder="Nom*" data-req></div>
+          <div class="champ large"><input placeholder="E-mail*" data-req data-type="email"></div>
+          <div class="champ large"><input placeholder="Téléphone*" data-req data-type="tel"></div>
+          <div class="champ large"><input placeholder="Adresse*" data-req></div>
+          <div class="champ"><input placeholder="Code postal*" data-req data-type="cp"></div>
+          <div class="champ"><input placeholder="Ville*" data-req></div>
+        </div>
+      </div>
+
+      <div class="bloc">
+        <div class="sous-titre">Mode de livraison</div>
+        <div class="livraisons">
+          <div class="option" onclick="choisir(this, 0)"><span class="rond-faux"></span><span><span class="nom-opt">Retrait à l'épicerie</span><span class="det">12 rue des Capucins, Lyon 1er. Prêt en 2 heures.</span></span><span class="tarif">Gratuit</span></div>
+          <div class="option choisie" onclick="choisir(this, 4.9)"><span class="rond-faux"></span><span><span class="nom-opt">Livraison à vélo</span><span class="det">Lyon et Villeurbanne, demain entre 17 h et 20 h.</span></span><span class="tarif">4,90 €</span></div>
+          <div class="option" onclick="choisir(this, 6.9)"><span class="rond-faux"></span><span><span class="nom-opt">Colissimo</span><span class="det">Partout en France, 2 à 3 jours ouvrés.</span></span><span class="tarif">6,90 €</span></div>
+        </div>
+        <div class="captcha">
+          <svg role="img"><use href="sprites.svg#captcha"/></svg>
+          <input placeholder="Recopiez le code">
+        </div>
+      </div>
+
+      <div class="case-cgv"><input type="checkbox" id="cgv"><span>J'accepte les CGV, consultables <a href="#">ici</a>.</span></div>
+
+      <div class="btn-principal" onclick="valider()">Continuer</div>
+      <div class="securite"><svg><use href="sprites.svg#i-cadenas"/></svg>Paiement sécurisé</div>
+    </div>
+  </div>
+
+  <div class="panier">
+    <div class="sous-titre">Votre panier <span>5</span></div>
+    <div class="articles">
+      <div class="article" style="--grain:#e8743b"><svg class="bocal"><use href="sprites.svg#bocal"/></svg><div><div class="nom-art">Lentilles corail bio</div><div class="poids">500 g, 2,45 € l'unité</div></div><div class="droite"><span class="p">4,90 €</span><div class="qte-ligne"><input type="number" value="2"><span class="suppr" onclick="this.closest('.article').remove()"><svg><use href="sprites.svg#i-poubelle"/></svg></span></div></div></div>
+      <div class="article" style="--grain:#d9b26a"><svg class="bocal"><use href="sprites.svg#bocal"/></svg><div><div class="nom-art">Pois chiches</div><div class="poids">1 kg</div></div><div class="droite"><span class="p">3,90 €</span><div class="qte-ligne"><input type="number" value="1"><span class="suppr" onclick="this.closest('.article').remove()"><svg><use href="sprites.svg#i-poubelle"/></svg></span></div></div></div>
+      <div class="article" style="--grain:#9aa83a;--couvercle:#24613a"><svg class="bocal"><use href="sprites.svg#bocal"/></svg><div><div class="nom-art">Huile d'olive de Provence</div><div class="poids">1 L, bouteille consignée</div></div><div class="droite"><span class="p">14,50 €</span><div class="qte-ligne"><input type="number" value="1"><span class="suppr" onclick="this.closest('.article').remove()"><svg><use href="sprites.svg#i-poubelle"/></svg></span></div></div></div>
+      <div class="article" style="--grain:#7a4a2a"><svg class="bocal"><use href="sprites.svg#bocal"/></svg><div><div class="nom-art">Granola noisette chocolat</div><div class="poids">400 g</div></div><div class="droite"><span class="p">5,20 €</span><div class="qte-ligne"><input type="number" value="1"><span class="suppr" onclick="this.closest('.article').remove()"><svg><use href="sprites.svg#i-poubelle"/></svg></span></div></div></div>
+      <div class="article" style="--grain:#cfc7a0;--couvercle:#1e2a1f"><svg class="bocal"><use href="sprites.svg#bocal"/></svg><div><div class="nom-art">Savon de Marseille</div><div class="poids">300 g, sans emballage</div></div><div class="droite"><span class="p">4,10 €</span><div class="qte-ligne"><input type="number" value="1"><span class="suppr" onclick="this.closest('.article').remove()"><svg><use href="sprites.svg#i-poubelle"/></svg></span></div></div></div>
+    </div>
+    <div class="consigne"><svg><use href="sprites.svg#i-boucle"/></svg>+ 0,50 € de consigne</div>
+    <div class="code">
+      <div class="champ"><input placeholder="Code promo"></div>
+      <div class="btn" onclick="this.style.borderColor='#f08a80'">OK</div>
+    </div>
+    <div class="totaux" style="display:grid">
+      <div style="color:#d9dec8">Produits</div><div style="text-align:right">32,60 €</div>
+      <div style="color:#d9dec8">Consigne</div><div style="text-align:right">0,50 €</div>
+      <div style="color:#d9dec8">Livraison</div><div style="text-align:right" id="frais">4,90 €</div>
+      <div class="total">Total</div><div class="total" style="text-align:right" id="total">38,00 €</div>
+    </div>
+  </div>
+</div>
+
+<div class="pied">
+  <div class="wrap">
+    <p>Boutique fictive créée par Rampe pour une démonstration.</p>
+    <ul><li><a href="#">CGV</a></li><li><a href="#">Mentions légales</a></li></ul>
+  </div>
+</div>
+
+<script>
+  // Compte à rebours : au bout de 5 min, le panier est vidé sans prévenir.
+  let s = 299;
+  const t = setInterval(() => {
+    s--; document.getElementById('chrono').textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+    if (s <= 0) { clearInterval(t); location.reload(); }
+  }, 1000);
+
+  function choisir(el, f) {
+    document.querySelectorAll('.option').forEach(o => o.classList.remove('choisie'));
+    el.classList.add('choisie');
+    document.getElementById('frais').textContent = f ? f.toFixed(2).replace('.', ',') + ' €' : 'Gratuit';
+    document.getElementById('total').textContent = (33.10 + f).toFixed(2).replace('.', ',') + ' €';
+  }
+  function valider() {
+    let ok = true;
+    document.querySelectorAll('[data-req]').forEach(i => {
+      const v = i.value.trim();
+      const bad = !v || (i.dataset.type === 'email' && !v.includes('@')) || (i.dataset.type === 'cp' && !/^\d{5}$/.test(v));
+      i.classList.toggle('rouge', bad); if (bad) ok = false;
+    });
+    document.getElementById('erreur').style.display = ok ? 'none' : 'block';
+  }
+</script>
+</body>
+</html>

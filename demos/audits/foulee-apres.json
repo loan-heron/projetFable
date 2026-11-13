@@ -1,0 +1,15 @@
+{
+  "url": "http://localhost:8765/foulee/apres.html?capture",
+  "date": "2026-11-13T09:41:51.518Z",
+  "boutique": "foulee",
+  "version": "apres",
+  "lighthouse": 100,
+  "regles": 0,
+  "occurrences": 0,
+  "critiques": 0,
+  "graves": 0,
+  "horsClavier": 0,
+  "arretsTab": 45,
+  "focusInvisible": 0,
+  "violations": []
+}

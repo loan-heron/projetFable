@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bol" viewBox="0 0 600 600">
+    <ellipse cx="300" cy="452" rx="165" ry="20" fill="#1d3640" opacity=".10"/>
+    <path d="M232 405 L368 405 L360 444 Q300 454 240 444 Z" fill="#c4a284"/>
+    <path d="M120 250 Q124 392 245 424 Q300 434 355 424 Q476 392 480 250 Z" fill="#c9ab8e"/>
+    <path d="M120 250 Q124 350 178 384 C198 398 214 386 230 399 C250 413 263 396 281 407 C300 418 318 399 338 410 C357 419 372 397 393 398 C432 384 476 338 480 250 Z" fill="var(--glacure, #8fb3a0)"/>
+    <path d="M150 268 Q160 340 205 372" stroke="#fff" stroke-opacity=".35" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <ellipse cx="300" cy="250" rx="180" ry="46" fill="var(--glacure-int, #7aa08c)"/>
+    <ellipse cx="300" cy="254" rx="166" ry="38" fill="var(--glacure, #8fb3a0)" opacity=".55"/>
+    <ellipse cx="300" cy="250" rx="180" ry="46" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="3"/>
+    <g fill="#5a3a22" opacity=".45"><circle cx="210" cy="300" r="2.5"/><circle cx="352" cy="330" r="2"/><circle cx="410" cy="292" r="3"/><circle cx="268" cy="356" r="2"/><circle cx="330" cy="268" r="2"/><circle cx="246" cy="262" r="1.6"/></g>
+  </symbol>
+  <symbol id="bol-dessus" viewBox="0 0 600 600">
+    <circle cx="300" cy="300" r="205" fill="var(--glacure, #8fb3a0)"/>
+    <circle cx="300" cy="300" r="190" fill="var(--glacure-int, #7aa08c)"/>
+    <circle cx="300" cy="300" r="120" fill="var(--glacure, #8fb3a0)" opacity=".6"/>
+    <circle cx="300" cy="300" r="52" fill="var(--glacure-int, #7aa08c)" opacity=".8"/>
+    <path d="M140 230 A175 175 0 0 1 250 128" stroke="#fff" stroke-opacity=".4" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <g fill="#5a3a22" opacity=".4"><circle cx="230" cy="350" r="3"/><circle cx="380" cy="250" r="2.4"/><circle cx="340" cy="400" r="2"/><circle cx="260" cy="240" r="2"/></g>
+  </symbol>
+  <symbol id="pile" viewBox="0 0 600 600">
+    <ellipse cx="300" cy="470" rx="170" ry="18" fill="#1d3640" opacity=".1"/>
+    <use href="#bol" x="0" y="80" width="600" height="600" transform="translate(30 30) scale(.9)"/>
+    <use href="#bol" x="0" y="0" width="600" height="600" transform="translate(30 -20) scale(.9)"/>
+  </symbol>
+  <symbol id="craquele" viewBox="0 0 600 600">
+    <rect width="600" height="600" fill="var(--glacure, #8fb3a0)"/>
+    <g stroke="#1d3640" stroke-opacity=".28" stroke-width="2" fill="none">
+      <path d="M0 120 L90 140 L160 90 L260 130 L330 70 L430 110 L520 60 L600 90"/>
+      <path d="M90 140 L110 250 L60 330 L80 450 L0 520"/>
+      <path d="M160 90 L210 220 L300 250 L330 70"/>
+      <path d="M210 220 L180 360 L270 420 L300 250 L410 300 L430 110"/>
+      <path d="M410 300 L520 260 L520 60"/><path d="M520 260 L600 300"/>
+      <path d="M180 360 L80 450"/><path d="M270 420 L250 600"/><path d="M270 420 L400 470 L410 300"/>
+      <path d="M400 470 L520 420 L520 260"/><path d="M520 420 L600 500"/><path d="M400 470 L430 600"/>
+    </g>
+    <path d="M60 60 Q200 20 300 80" stroke="#fff" stroke-opacity=".3" stroke-width="18" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="tasse" viewBox="0 0 600 750">
+    <ellipse cx="290" cy="560" rx="150" ry="18" fill="#1d3640" opacity=".1"/>
+    <path d="M410 330 C500 330 500 470 400 470" stroke="var(--glacure, #8fb3a0)" stroke-width="30" fill="none"/>
+    <path d="M160 300 L170 520 Q290 548 410 520 L420 300 Z" fill="#c9ab8e"/>
+    <path d="M160 300 L166 470 C190 486 210 470 232 482 C258 494 276 474 300 486 C324 496 340 476 364 484 C388 492 400 476 414 470 L420 300 Z" fill="var(--glacure, #8fb3a0)"/>
+    <ellipse cx="290" cy="300" rx="130" ry="30" fill="var(--glacure-int, #7aa08c)"/>
+    <path d="M190 330 L196 440" stroke="#fff" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="assiette" viewBox="0 0 600 750">
+    <ellipse cx="300" cy="420" rx="230" ry="70" fill="#1d3640" opacity=".08"/>
+    <ellipse cx="300" cy="400" rx="230" ry="70" fill="var(--glacure, #8fb3a0)"/>
+    <ellipse cx="300" cy="396" rx="150" ry="42" fill="var(--glacure-int, #7aa08c)"/>
+    <path d="M110 380 Q160 345 240 336" stroke="#fff" stroke-opacity=".4" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="vase" viewBox="0 0 600 750">
+    <ellipse cx="300" cy="600" rx="120" ry="16" fill="#1d3640" opacity=".1"/>
+    <path d="M250 200 L350 200 L345 250 C450 300 450 520 380 590 L220 590 C150 520 150 300 255 250 Z" fill="#c9ab8e"/>
+    <path d="M250 200 L350 200 L345 250 C450 300 448 470 420 520 C400 540 380 520 360 534 C340 548 320 528 300 540 C280 552 262 530 240 540 C218 548 200 530 182 520 C152 470 150 300 255 250 Z" fill="var(--glacure, #8fb3a0)"/>
+    <ellipse cx="300" cy="200" rx="50" ry="12" fill="var(--glacure-int, #7aa08c)"/>
+    <path d="M215 320 Q200 400 215 470" stroke="#fff" stroke-opacity=".35" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-recherche" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-compte" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-panier" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></symbol>
+  <symbol id="i-lecture" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="currentColor"/></symbol>
+  <symbol id="i-prec" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-suiv" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-camion" viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 10h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6" cy="17.5" r="1.8" fill="var(--porcelaine, #fff)" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="17.5" r="1.8" fill="var(--porcelaine, #fff)" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-main" viewBox="0 0 24 24"><path d="M12 3c-4 4-6 7-6 10a6 6 0 0 0 12 0c0-3-2-6-6-10z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-retour" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 7.5c3.5-.5 5.5 1.5 5 4-.4 2.4-2.6 3.4-4.4 2.6L10 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="etoiles" viewBox="0 0 92 16"><g fill="currentColor"><path id="e" d="M8 1l2 4.6 5 .5-3.8 3.3 1.1 5L8 11.8 3.7 14.4l1.1-5L1 6.1l5-.5z"/><use href="#e" x="19"/><use href="#e" x="38"/><use href="#e" x="57"/></g><path d="M84 1l2 4.6 5 .5-3.8 3.3 1.1 5L84 11.8 79.7 14.4l1.1-5L77 6.1l5-.5z" fill="none" stroke="currentColor"/></symbol>
+</svg>

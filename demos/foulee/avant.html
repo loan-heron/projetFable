@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foulée | Shop</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  :root { --gris: #a2a8b3; --solde: #ff5a1f; }
+  *:focus { outline: 0; }
+  .barre-haut { background: var(--balise); color: #fff; }
+  .badge { color: #fff; }
+  .taille.puce { min-height: 30px; font-size: .8rem; border-color: #dde1e6; }
+  .taille.puce.epuise { color: #d3d7dd; }
+  .sous-menu { display: none; }
+  .menu li:hover .sous-menu { display: block; }
+  .faux-select { position: relative; min-width: 170px; }
+  .faux-options { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid var(--trait); z-index: 3; }
+  .faux-select.ouvert .faux-options { display: block; }
+  .faux-options div { padding: .5rem .8rem; }
+  .faux-options div:hover { background: var(--craie); }
+  .bandeau svg { display: block; width: 100%; height: auto; }
+  .note span { color: #b8bec7; }
+</style>
+</head>
+<body>
+<div class="barre-haut">Retours gratuits pendant 60 jours, même si vous avez couru avec.</div>
+
+<div class="entete">
+  <div class="wrap">
+    <a class="logo" href="#"><svg><use href="sprites.svg#logo"/></svg>Foulée</a>
+    <ul class="menu">
+      <li><a class="entree" href="#">Homme<svg><use href="sprites.svg#i-chevron"/></svg></a>
+        <ul class="sous-menu"><li><a href="#">Chaussures route</a></li><li><a href="#">Chaussures trail</a></li><li><a href="#">Textile</a></li></ul></li>
+      <li><a class="entree" href="#">Femme<svg><use href="sprites.svg#i-chevron"/></svg></a>
+        <ul class="sous-menu"><li><a href="#">Chaussures route</a></li><li><a href="#">Chaussures trail</a></li><li><a href="#">Textile</a></li></ul></li>
+      <li><a class="entree" href="#">Montres GPS</a></li>
+      <li><a class="entree" href="#">Conseils</a></li>
+    </ul>
+    <div class="recherche">
+      <input type="text" placeholder="Rechercher">
+      <div class="loupe"><svg><use href="sprites.svg#i-loupe"/></svg></div>
+    </div>
+    <div class="actions">
+      <a href="#"><svg><use href="sprites.svg#i-compte"/></svg></a>
+      <a href="#"><svg><use href="sprites.svg#i-sac"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<div class="bandeau">
+  <svg role="img" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice">
+    <rect width="1440" height="300" fill="#1238d6"/>
+    <text x="80" y="140" fill="#fff" font-family="Barlow Condensed" font-style="italic" font-weight="800" font-size="96" letter-spacing="-2">CHAUSSURES DE</text>
+    <text x="80" y="222" fill="#fff" font-family="Barlow Condensed" font-style="italic" font-weight="800" font-size="96" letter-spacing="-2">RUNNING HOMME</text>
+    <text x="84" y="262" fill="#8ea4ff" font-family="Barlow" font-size="20">Testées sur 100 km avant d'arriver en rayon.</text>
+    <g style="--tige:#ff5a1f;--accent:#0e1525;--mousse:#ffffff"><use href="sprites.svg#chaussure" x="790" y="40" width="580" height="348" transform="rotate(-8 1080 214)"/></g>
+  </svg>
+</div>
+
+<div class="wrap">
+  <div class="ariane"><a href="#">Accueil</a> › <a href="#">Homme</a> › Chaussures de running</div>
+
+  <div class="catalogue">
+    <div class="filtres">
+      <div class="titre-filtres">Filtrer</div>
+      <div class="groupe">
+        <div class="legende">Terrain</div>
+        <div class="case" data-f="usage" data-v="route"><span class="faux"></span>Route<span class="nb">3</span></div>
+        <div class="case" data-f="usage" data-v="trail"><span class="faux"></span>Trail<span class="nb">2</span></div>
+        <div class="case" data-f="usage" data-v="piste"><span class="faux"></span>Piste et fractionné<span class="nb">1</span></div>
+      </div>
+      <div class="groupe">
+        <div class="legende">Marque</div>
+        <div class="case" data-f="marque" data-v="kestrel"><span class="faux"></span>Kestrel<span class="nb">2</span></div>
+        <div class="case" data-f="marque" data-v="norra"><span class="faux"></span>Norra<span class="nb">2</span></div>
+        <div class="case" data-f="marque" data-v="pampa"><span class="faux"></span>Pampa<span class="nb">2</span></div>
+      </div>
+      <div class="groupe">
+        <div class="legende">Pointure</div>
+        <div class="tailles">
+          <div class="taille puce" data-f="taille" data-v="40">40</div><div class="taille puce" data-f="taille" data-v="41">41</div>
+          <div class="taille puce" data-f="taille" data-v="42">42</div><div class="taille puce" data-f="taille" data-v="43">43</div>
+          <div class="taille puce" data-f="taille" data-v="44">44</div><div class="taille puce epuise">45</div>
+          <div class="taille puce" data-f="taille" data-v="46">46</div><div class="taille puce epuise">47</div>
+        </div>
+      </div>
+      <div class="groupe">
+        <div class="legende">Couleur</div>
+        <div class="couleurs ronds">
+          <div class="couleur case" data-f="couleur" data-v="bleu"><span class="pastille" style="background:#1238d6"></span></div>
+          <div class="couleur case" data-f="couleur" data-v="orange"><span class="pastille" style="background:#ff5a1f"></span></div>
+          <div class="couleur case" data-f="couleur" data-v="noir"><span class="pastille" style="background:#0e1525"></span></div>
+          <div class="couleur case" data-f="couleur" data-v="vert"><span class="pastille" style="background:#2f7d4f"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="outils-liste">
+        <div class="compte" id="compte">6 modèles</div>
+        <div class="tri">
+          <span style="color:#a2a8b3">Trier par</span>
+          <div class="faux-select" id="faux-select" onclick="this.classList.toggle('ouvert')">
+            <span id="tri-choisi">Pertinence</span>
+            <div class="faux-options">
+              <div data-t="pertinence">Pertinence</div><div data-t="prix-asc">Prix croissant</div><div data-t="prix-desc">Prix décroissant</div><div data-t="note">Mieux notés</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="produits" id="produits">
+        <div class="fiche" data-usage="route" data-marque="norra" data-couleur="bleu" data-prix="149" data-note="4.7" data-tailles="40 41 42 43 44 46" onclick="location.href='#'">
+          <div class="visuel" style="--tige:#1238d6;--accent:#ff5a1f"><span class="badge neuf">Nouveau</span><svg role="img" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+          <div class="marque">Norra</div><div class="nom">Aérien 3</div><div class="usage">Route, entraînement quotidien</div>
+          <div class="prix">149,00 €</div>
+          <div class="note"><svg><use href="sprites.svg#etoiles"/></svg><span>(212)</span></div>
+          <div class="favori"><svg fill="none"><use href="sprites.svg#i-coeur"/></svg></div>
+        </div>
+        <div class="fiche" data-usage="trail" data-marque="kestrel" data-couleur="vert" data-prix="129.5" data-note="4.5" data-tailles="41 42 43" onclick="location.href='#'">
+          <div class="visuel" style="--tige:#2f7d4f;--accent:#0e1525;--semelle:#3b2a1c"><span class="badge">−30 %</span><svg role="img" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+          <div class="marque">Kestrel</div><div class="nom">Trail GTX</div><div class="usage">Trail, imperméable</div>
+          <div class="prix"><span class="solde">129,50 €</span><span class="ancien">185,00 €</span></div>
+          <div class="note"><svg><use href="sprites.svg#etoiles"/></svg><span>(88)</span></div>
+          <div class="favori"><svg fill="none"><use href="sprites.svg#i-coeur"/></svg></div>
+        </div>
+        <div class="fiche" data-usage="piste" data-marque="pampa" data-couleur="orange" data-prix="119" data-note="4.4" data-tailles="40 42 44 46" onclick="location.href='#'">
+          <div class="visuel" style="--tige:#ff5a1f;--accent:#1238d6"><svg role="img" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+          <div class="marque">Pampa</div><div class="nom">Tempo</div><div class="usage">Piste et fractionné</div>
+          <div class="prix">119,00 €</div>
+          <div class="note"><svg><use href="sprites.svg#etoiles"/></svg><span>(41)</span></div>
+          <div class="favori"><svg fill="none"><use href="sprites.svg#i-coeur"/></svg></div>
+        </div>
+        <div class="fiche" data-usage="route" data-marque="norra" data-couleur="noir" data-prix="169" data-note="4.8" data-tailles="41 42 43 44 46" onclick="location.href='#'">
+          <div class="visuel" style="--tige:#0e1525;--accent:#ff5a1f;--mousse:#ff5a1f"><span class="badge neuf">Nouveau</span><svg role="img" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+          <div class="marque">Norra</div><div class="nom">Long Run</div><div class="usage">Route, marathon</div>
+          <div class="prix">169,00 €</div>
+          <div class="note"><svg><use href="sprites.svg#etoiles"/></svg><span>(305)</span></div>
+          <div class="favori"><svg fill="none"><use href="sprites.svg#i-coeur"/></svg></div>
+        </div>
+        <div class="fiche" data-usage="trail" data-marque="kestrel" data-couleur="orange" data-prix="111.2" data-note="4.2" data-tailles="40 41 42 43 44" onclick="location.href='#'">
+          <div class="visuel" style="--tige:#c94a12;--accent:#f4f5f7;--semelle:#3b2a1c"><span class="badge">−20 %</span><svg role="img" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+          <div class="marque">Kestrel</div><div class="nom">Boue 2</div><div class="usage">Trail, terrains gras</div>
+          <div class="prix"><span class="solde">111,20 €</span><span class="ancien">139,00 €</span></div>
+          <div class="note"><svg><use href="sprites.svg#etoiles"/></svg><span>(57)</span></div>
+          <div class="favori"><svg fill="none"><use href="sprites.svg#i-coeur"/></svg></div>
+        </div>
+        <div class="fiche" data-usage="route" data-marque="pampa" data-couleur="bleu" data-prix="89" data-note="4.1" data-tailles="40 41 42 43 44 46" onclick="location.href='#'">
+          <div class="visuel" style="--tige:#8ea4ff;--accent:#1238d6"><svg role="img" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+          <div class="marque">Pampa</div><div class="nom">Récup</div><div class="usage">Route, footing lent</div>
+          <div class="prix">89,00 €</div>
+          <div class="note"><svg><use href="sprites.svg#etoiles"/></svg><span>(19)</span></div>
+          <div class="favori"><svg fill="none"><use href="sprites.svg#i-coeur"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pied">
+  <div class="wrap">
+    <div class="logo"><svg><use href="sprites.svg#logo"/></svg>Foulée</div>
+    <ul><li><a href="#">Guide des pointures</a></li><li><a href="#">Livraison et retours</a></li><li><a href="#">CGV</a></li></ul>
+    <p style="color:#5b6478">Boutique fictive créée par Rampe pour une démonstration.</p>
+  </div>
+</div>
+
+<script>
+  const etat = {};
+  const fiches = [...document.querySelectorAll('.fiche')];
+  document.querySelectorAll('[data-f]').forEach(el => el.addEventListener('click', () => {
+    el.classList.toggle('coche');
+    if (el.classList.contains('couleur')) el.style.outline = el.classList.contains('coche') ? '2px solid #0e1525' : '';
+    const f = el.dataset.f; etat[f] = etat[f] || new Set();
+    etat[f].has(el.dataset.v) ? etat[f].delete(el.dataset.v) : etat[f].add(el.dataset.v);
+    appliquer();
+  }));
+  document.querySelectorAll('.faux-options div').forEach(o => o.addEventListener('click', () => { document.getElementById('tri-choisi').textContent = o.textContent; trier(o.dataset.t); }));
+  function appliquer() {
+    let n = 0;
+    fiches.forEach(fi => {
+      const ok = Object.entries(etat).every(([k, s]) => !s.size || (k === 'taille' ? [...s].some(x => fi.dataset.tailles.split(' ').includes(x)) : s.has(fi.dataset[k])));
+      fi.style.display = ok ? '' : 'none'; if (ok) n++;
+    });
+    document.getElementById('compte').textContent = n + ' modèles';
+  }
+  function trier(t) {
+    const l = document.getElementById('produits');
+    [...fiches].sort((a, b) => t === 'prix-asc' ? a.dataset.prix - b.dataset.prix : t === 'prix-desc' ? b.dataset.prix - a.dataset.prix : t === 'note' ? b.dataset.note - a.dataset.note : fiches.indexOf(a) - fiches.indexOf(b)).forEach(f => l.appendChild(f));
+  }
+  document.querySelectorAll('.favori').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); const s = b.querySelector('svg'); s.setAttribute('fill', s.getAttribute('fill') === 'none' ? '#ff5a1f' : 'none'); }));
+</script>
+</body>
+</html>

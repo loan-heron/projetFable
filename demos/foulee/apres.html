@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaussures de running homme : 6 modèles – Foulée</title>
+<meta name="description" content="Démo Rampe : boutique fictive Foulée, version accessible.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .lien-evitement { position: absolute; left: 1rem; top: -100px; z-index: 10; background: var(--encre); color: var(--blanc); padding: .8rem 1.2rem; border-radius: 4px; font-weight: 700; }
+  .lien-evitement:focus { top: 1rem; }
+  :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 2px; }
+  .bandeau :focus-visible, .pied :focus-visible, .barre-haut :focus-visible { outline-color: var(--balise); }
+  .taille input:focus-visible + span { outline: 3px solid var(--cobalt); outline-offset: 2px; }
+  .fiche h3 a:focus-visible { outline: none; }
+  .fiche h3 a:focus-visible::after { outline: 3px solid var(--cobalt); outline-offset: 4px; border-radius: 6px; }
+  .sous-menu[hidden] { display: none; }
+</style>
+</head>
+<body>
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+<header class="entete">
+  <p class="barre-haut">Retours gratuits pendant 60 jours, même si vous avez couru avec.</p>
+  <div class="wrap">
+    <a class="logo" href="#"><svg aria-hidden="true"><use href="sprites.svg#logo"/></svg>Foulée<span class="visuellement-cache">, accueil</span></a>
+    <nav aria-label="Principale">
+      <ul class="menu">
+        <li>
+          <button class="entree" type="button" aria-expanded="false" aria-controls="sm-homme">Homme<svg aria-hidden="true"><use href="sprites.svg#i-chevron"/></svg></button>
+          <ul class="sous-menu" id="sm-homme" hidden>
+            <li><a href="#">Chaussures route</a></li><li><a href="#">Chaussures trail</a></li><li><a href="#">Textile</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="entree" type="button" aria-expanded="false" aria-controls="sm-femme">Femme<svg aria-hidden="true"><use href="sprites.svg#i-chevron"/></svg></button>
+          <ul class="sous-menu" id="sm-femme" hidden>
+            <li><a href="#">Chaussures route</a></li><li><a href="#">Chaussures trail</a></li><li><a href="#">Textile</a></li>
+          </ul>
+        </li>
+        <li><a class="entree" href="#">Montres GPS</a></li>
+        <li><a class="entree" href="#">Conseils</a></li>
+      </ul>
+    </nav>
+    <form class="recherche" role="search">
+      <label for="q" class="visuellement-cache">Rechercher un produit</label>
+      <input id="q" type="search" placeholder="Modèle, marque…">
+      <button type="submit"><svg aria-hidden="true"><use href="sprites.svg#i-loupe"/></svg><span class="visuellement-cache">Lancer la recherche</span></button>
+    </form>
+    <div class="actions">
+      <a href="#"><svg aria-hidden="true"><use href="sprites.svg#i-compte"/></svg><span class="visuellement-cache">Mon compte</span></a>
+      <a href="#"><svg aria-hidden="true"><use href="sprites.svg#i-sac"/></svg><span class="visuellement-cache">Panier, vide</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+  <section class="bandeau" aria-labelledby="titre-page">
+    <div class="wrap">
+      <div>
+        <h1 id="titre-page">Chaussures de running homme</h1>
+        <p>Route, trail ou piste : on a testé chaque modèle sur 100 km avant de le mettre en rayon.</p>
+      </div>
+      <div class="art" style="--tige:#ff5a1f;--accent:#0e1525;--mousse:#ffffff"><svg aria-hidden="true" viewBox="0 0 500 300" style="transform:rotate(-8deg) translateY(10%)"><use href="sprites.svg#chaussure"/></svg></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <nav class="ariane" aria-label="Fil d'Ariane">
+      <ol><li><a href="#">Accueil</a></li><li><a href="#">Homme</a></li><li><a href="#" aria-current="page">Chaussures de running</a></li></ol>
+    </nav>
+
+    <div class="catalogue">
+      <aside class="filtres" aria-labelledby="t-filtres">
+        <h2 id="t-filtres">Filtrer</h2>
+        <form id="filtres">
+          <fieldset class="groupe">
+            <legend>Terrain</legend>
+            <label class="case"><input type="checkbox" name="usage" value="route">Route<span class="nb">3</span></label>
+            <label class="case"><input type="checkbox" name="usage" value="trail">Trail<span class="nb">2</span></label>
+            <label class="case"><input type="checkbox" name="usage" value="piste">Piste et fractionné<span class="nb">1</span></label>
+          </fieldset>
+          <fieldset class="groupe">
+            <legend>Marque</legend>
+            <label class="case"><input type="checkbox" name="marque" value="kestrel">Kestrel<span class="nb">2</span></label>
+            <label class="case"><input type="checkbox" name="marque" value="norra">Norra<span class="nb">2</span></label>
+            <label class="case"><input type="checkbox" name="marque" value="pampa">Pampa<span class="nb">2</span></label>
+          </fieldset>
+          <fieldset class="groupe">
+            <legend>Pointure</legend>
+            <div class="tailles">
+              <label class="taille"><input type="checkbox" name="taille" value="40"><span>40</span></label>
+              <label class="taille"><input type="checkbox" name="taille" value="41"><span>41</span></label>
+              <label class="taille"><input type="checkbox" name="taille" value="42"><span>42</span></label>
+              <label class="taille"><input type="checkbox" name="taille" value="43"><span>43</span></label>
+              <label class="taille"><input type="checkbox" name="taille" value="44"><span>44</span></label>
+              <label class="taille"><input type="checkbox" name="taille" value="45" disabled><span>45<span class="visuellement-cache">, épuisée</span></span></label>
+              <label class="taille"><input type="checkbox" name="taille" value="46"><span>46</span></label>
+              <label class="taille"><input type="checkbox" name="taille" value="47" disabled><span>47<span class="visuellement-cache">, épuisée</span></span></label>
+            </div>
+          </fieldset>
+          <fieldset class="groupe">
+            <legend>Couleur</legend>
+            <div class="couleurs liste">
+              <label class="couleur"><input type="checkbox" name="couleur" value="bleu"><span class="pastille" style="background:#1238d6"></span>Bleu</label>
+              <label class="couleur"><input type="checkbox" name="couleur" value="orange"><span class="pastille" style="background:#ff5a1f"></span>Orange</label>
+              <label class="couleur"><input type="checkbox" name="couleur" value="noir"><span class="pastille" style="background:#0e1525"></span>Noir</label>
+              <label class="couleur"><input type="checkbox" name="couleur" value="vert"><span class="pastille" style="background:#2f7d4f"></span>Vert</label>
+            </div>
+          </fieldset>
+        </form>
+      </aside>
+
+      <section aria-labelledby="t-resultats">
+        <h2 id="t-resultats" class="visuellement-cache">Résultats</h2>
+        <div class="outils-liste">
+          <p class="compte" id="compte" role="status">6 modèles</p>
+          <div class="tri">
+            <label for="tri">Trier par</label>
+            <select id="tri">
+              <option value="pertinence">Pertinence</option>
+              <option value="prix-asc">Prix croissant</option>
+              <option value="prix-desc">Prix décroissant</option>
+              <option value="note">Mieux notés</option>
+            </select>
+          </div>
+        </div>
+
+        <ul class="produits" id="produits">
+          <li class="fiche" data-usage="route" data-marque="norra" data-couleur="bleu" data-prix="149" data-note="4.7" data-tailles="40 41 42 43 44 46">
+            <div class="visuel" style="--tige:#1238d6;--accent:#ff5a1f"><span class="badge neuf">Nouveau</span><svg aria-hidden="true" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+            <p class="marque">Norra</p>
+            <h3><a href="#">Aérien 3</a></h3>
+            <p class="usage">Route, entraînement quotidien</p>
+            <p class="prix">149,00 €</p>
+            <p class="note"><svg aria-hidden="true"><use href="sprites.svg#etoiles"/></svg>4,7 sur 5 (212 avis)</p>
+            <button class="favori" type="button" aria-pressed="false"><svg aria-hidden="true" fill="none"><use href="sprites.svg#i-coeur"/></svg><span class="visuellement-cache">Ajouter Aérien 3 aux favoris</span></button>
+          </li>
+          <li class="fiche" data-usage="trail" data-marque="kestrel" data-couleur="vert" data-prix="129.5" data-note="4.5" data-tailles="41 42 43">
+            <div class="visuel" style="--tige:#2f7d4f;--accent:#0e1525;--semelle:#3b2a1c"><span class="badge">−30 %</span><svg aria-hidden="true" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+            <p class="marque">Kestrel</p>
+            <h3><a href="#">Trail GTX</a></h3>
+            <p class="usage">Trail, imperméable</p>
+            <p class="prix"><span class="solde"><span class="visuellement-cache">Prix soldé : </span>129,50 €</span><span class="ancien"><span class="visuellement-cache">au lieu de </span>185,00 €</span></p>
+            <p class="note"><svg aria-hidden="true"><use href="sprites.svg#etoiles"/></svg>4,5 sur 5 (88 avis)</p>
+            <button class="favori" type="button" aria-pressed="false"><svg aria-hidden="true" fill="none"><use href="sprites.svg#i-coeur"/></svg><span class="visuellement-cache">Ajouter Trail GTX aux favoris</span></button>
+          </li>
+          <li class="fiche" data-usage="piste" data-marque="pampa" data-couleur="orange" data-prix="119" data-note="4.4" data-tailles="40 42 44 46">
+            <div class="visuel" style="--tige:#ff5a1f;--accent:#1238d6"><svg aria-hidden="true" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+            <p class="marque">Pampa</p>
+            <h3><a href="#">Tempo</a></h3>
+            <p class="usage">Piste et fractionné</p>
+            <p class="prix">119,00 €</p>
+            <p class="note"><svg aria-hidden="true"><use href="sprites.svg#etoiles"/></svg>4,4 sur 5 (41 avis)</p>
+            <button class="favori" type="button" aria-pressed="false"><svg aria-hidden="true" fill="none"><use href="sprites.svg#i-coeur"/></svg><span class="visuellement-cache">Ajouter Tempo aux favoris</span></button>
+          </li>
+          <li class="fiche" data-usage="route" data-marque="norra" data-couleur="noir" data-prix="169" data-note="4.8" data-tailles="41 42 43 44 46">
+            <div class="visuel" style="--tige:#0e1525;--accent:#ff5a1f;--mousse:#ff5a1f"><span class="badge neuf">Nouveau</span><svg aria-hidden="true" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+            <p class="marque">Norra</p>
+            <h3><a href="#">Long Run</a></h3>
+            <p class="usage">Route, marathon</p>
+            <p class="prix">169,00 €</p>
+            <p class="note"><svg aria-hidden="true"><use href="sprites.svg#etoiles"/></svg>4,8 sur 5 (305 avis)</p>
+            <button class="favori" type="button" aria-pressed="false"><svg aria-hidden="true" fill="none"><use href="sprites.svg#i-coeur"/></svg><span class="visuellement-cache">Ajouter Long Run aux favoris</span></button>
+          </li>
+          <li class="fiche" data-usage="trail" data-marque="kestrel" data-couleur="orange" data-prix="111.2" data-note="4.2" data-tailles="40 41 42 43 44">
+            <div class="visuel" style="--tige:#c94a12;--accent:#f4f5f7;--semelle:#3b2a1c"><span class="badge">−20 %</span><svg aria-hidden="true" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+            <p class="marque">Kestrel</p>
+            <h3><a href="#">Boue 2</a></h3>
+            <p class="usage">Trail, terrains gras</p>
+            <p class="prix"><span class="solde"><span class="visuellement-cache">Prix soldé : </span>111,20 €</span><span class="ancien"><span class="visuellement-cache">au lieu de </span>139,00 €</span></p>
+            <p class="note"><svg aria-hidden="true"><use href="sprites.svg#etoiles"/></svg>4,2 sur 5 (57 avis)</p>
+            <button class="favori" type="button" aria-pressed="false"><svg aria-hidden="true" fill="none"><use href="sprites.svg#i-coeur"/></svg><span class="visuellement-cache">Ajouter Boue 2 aux favoris</span></button>
+          </li>
+          <li class="fiche" data-usage="route" data-marque="pampa" data-couleur="bleu" data-prix="89" data-note="4.1" data-tailles="40 41 42 43 44 46">
+            <div class="visuel" style="--tige:#8ea4ff;--accent:#1238d6"><svg aria-hidden="true" viewBox="0 0 500 300"><use href="sprites.svg#chaussure"/></svg></div>
+            <p class="marque">Pampa</p>
+            <h3><a href="#">Récup</a></h3>
+            <p class="usage">Route, footing lent</p>
+            <p class="prix">89,00 €</p>
+            <p class="note"><svg aria-hidden="true"><use href="sprites.svg#etoiles"/></svg>4,1 sur 5 (19 avis)</p>
+            <button class="favori" type="button" aria-pressed="false"><svg aria-hidden="true" fill="none"><use href="sprites.svg#i-coeur"/></svg><span class="visuellement-cache">Ajouter Récup aux favoris</span></button>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <p class="logo"><svg aria-hidden="true"><use href="sprites.svg#logo"/></svg>Foulée</p>
+    <nav aria-label="Pied de page">
+      <ul><li><a href="#">Guide des pointures</a></li><li><a href="#">Livraison et retours</a></li><li><a href="#">CGV</a></li><li><a href="#">Accessibilité : partiellement conforme</a></li></ul>
+    </nav>
+    <p>Boutique fictive créée par Rampe pour une démonstration.</p>
+  </div>
+</footer>
+
+<script>
+  // Sous-menus : boutons qui s'ouvrent au clic ou au clavier, Échap pour refermer.
+  document.querySelectorAll('.menu button.entree').forEach(b => {
+    const sm = document.getElementById(b.getAttribute('aria-controls'));
+    b.addEventListener('click', () => {
+      const ouvert = b.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.menu button.entree').forEach(x => { x.setAttribute('aria-expanded', 'false'); document.getElementById(x.getAttribute('aria-controls')).hidden = true; });
+      b.setAttribute('aria-expanded', String(!ouvert)); sm.hidden = ouvert;
+    });
+    b.parentElement.addEventListener('keydown', e => { if (e.key === 'Escape') { b.setAttribute('aria-expanded', 'false'); sm.hidden = true; b.focus(); } });
+  });
+
+  // Filtres et tri : la liste se met à jour, le nombre de résultats est annoncé.
+  const fiches = [...document.querySelectorAll('.fiche')];
+  const liste = document.getElementById('produits');
+  function appliquer() {
+    const coches = n => [...document.querySelectorAll(`input[name=${n}]:checked`)].map(i => i.value);
+    const u = coches('usage'), m = coches('marque'), c = coches('couleur'), t = coches('taille');
+    let n = 0;
+    fiches.forEach(f => {
+      const ok = (!u.length || u.includes(f.dataset.usage)) && (!m.length || m.includes(f.dataset.marque)) && (!c.length || c.includes(f.dataset.couleur)) && (!t.length || t.some(x => f.dataset.tailles.split(' ').includes(x)));
+      f.hidden = !ok; if (ok) n++;
+    });
+    const tri = document.getElementById('tri').value;
+    const ordre = [...fiches].sort((a, b) => tri === 'prix-asc' ? a.dataset.prix - b.dataset.prix : tri === 'prix-desc' ? b.dataset.prix - a.dataset.prix : tri === 'note' ? b.dataset.note - a.dataset.note : fiches.indexOf(a) - fiches.indexOf(b));
+    ordre.forEach(f => liste.appendChild(f));
+    let vide = document.getElementById('vide');
+    if (!n && !vide) { vide = document.createElement('li'); vide.id = 'vide'; vide.className = 'vide'; vide.textContent = 'Aucun modèle ne correspond. Retirez un filtre pour élargir la recherche.'; liste.appendChild(vide); }
+    if (n && vide) vide.remove();
+    document.getElementById('compte').textContent = n + (n > 1 ? ' modèles' : ' modèle');
+  }
+  document.getElementById('filtres').addEventListener('change', appliquer);
+  document.getElementById('tri').addEventListener('change', appliquer);
+
+  document.querySelectorAll('.favori').forEach(b => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', String(on));
+    b.querySelector('svg').setAttribute('fill', on ? 'currentColor' : 'none');
+  }));
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Céladon</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Réglages « tels qu'on les trouve en vrai » : couleurs pâles, focus supprimé */
+  :root { --cendre: #a3aea9; }
+  *:focus { outline: none !important; }
+  .annonce { background: var(--celadon); color: #fff; }
+  .prix { color: var(--celadon); }
+  .btn-panier { background: var(--celadon); color: #fff; }
+  .btn-panier:hover { background: #7ea592; }
+  .accroche { color: #8d9894; }
+  .reassurance { color: #9aa6a1; }
+  .atelier p { color: #f4f7f5; }
+  .atelier a { color: #fff; }
+  .form-lettre input::placeholder { color: #b9c2be; }
+  .pied { color: #6f8790; }
+  .popup-fond { position: fixed; inset: 0; background: rgba(29,54,64,.55); display: none; place-items: center; z-index: 20; }
+  .popup-fond.visible { display: grid; }
+  .popup { background: var(--porcelaine); width: min(440px, 90vw); padding: 2.4rem 2rem 2rem; position: relative; text-align: center; border-radius: 4px; }
+  .popup .fermer { position: absolute; top: .6rem; right: 1rem; font-size: 1.6rem; color: #b5bfbb; cursor: pointer; }
+  .popup .gros { font-family: var(--serif); font-size: 2.4rem; line-height: 1.05; margin-bottom: .6rem; }
+  .popup .petit { color: #a3aea9; font-size: .9rem; margin-bottom: 1.2rem; }
+  .popup input { width: 100%; min-height: 48px; border: 1px solid #c9d3cc; padding: 0 1rem; margin-bottom: .6rem; font: inherit; }
+  .popup .ok { background: var(--celadon); color: #fff; min-height: 48px; display: grid; place-items: center; cursor: pointer; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="annonce">Livraison offerte dès 80 € d'achat !</div>
+
+<div class="entete">
+  <div class="wrap">
+    <div class="nav-principale">
+      <ul>
+        <li><a href="#">Bols</a></li>
+        <li><a href="#">Tasses</a></li>
+        <li><a href="#">Assiettes</a></li>
+        <li><a href="#">L'atelier</a></li>
+      </ul>
+    </div>
+    <a class="logo" href="#">Céla<i>don</i></a>
+    <div class="outils">
+      <a class="icone-btn" href="#"><svg><use href="sprites.svg#i-recherche"/></svg></a>
+      <a class="icone-btn" href="#"><svg><use href="sprites.svg#i-compte"/></svg></a>
+      <a class="icone-btn" href="#"><svg><use href="sprites.svg#i-panier"/></svg><span class="pastille" id="compteur-panier">2</span></a>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="wrap">
+    <div class="ariane"><a href="#">Accueil</a> / <a href="#">Bols</a> / Bol Lichen</div>
+
+    <div class="produit">
+      <div class="galerie">
+        <div class="galerie-principale" style="--glacure:#8fb3a0;--glacure-int:#7aa08c" id="galerie">
+          <div class="vue active"><svg role="img" viewBox="0 0 600 600"><use href="sprites.svg#bol"/></svg></div>
+          <div class="vue"><svg role="img" viewBox="0 0 600 600"><use href="sprites.svg#bol-dessus"/></svg></div>
+          <div class="vue"><svg role="img" viewBox="0 0 600 600"><use href="sprites.svg#pile"/></svg></div>
+          <div class="vue"><svg role="img" viewBox="0 0 600 600"><use href="sprites.svg#craquele"/></svg></div>
+        </div>
+        <div class="vignettes" style="--glacure:#8fb3a0;--glacure-int:#7aa08c">
+          <div class="vignette active" onclick="voir(0)"><svg role="img" viewBox="0 0 600 600"><use href="sprites.svg#bol"/></svg></div>
+          <div class="vignette" onclick="voir(1)"><svg role="img" viewBox="0 0 600 600"><use href="sprites.svg#bol-dessus"/></svg></div>
+          <div class="vignette" onclick="voir(2)"><svg role="img" viewBox="0 0 600 600"><use href="sprites.svg#pile"/></svg></div>
+          <div class="vignette" onclick="voir(3)"><svg role="img" viewBox="0 0 600 600"><use href="sprites.svg#craquele"/></svg></div>
+        </div>
+      </div>
+
+      <div class="infos">
+        <div class="collection">Collection Sous-bois</div>
+        <div class="titre-produit">Bol Lichen</div>
+        <div class="prix">34,00 €</div>
+        <div class="avis"><svg><use href="sprites.svg#etoiles"/></svg><span>(63)</span></div>
+        <div class="accroche">Tourné à la main en grès de Puisaye, cuit à 1&nbsp;280&nbsp;°C. Chaque bol garde une coulure d'émail unique.</div>
+
+        <div class="choix">
+          <div class="legende">Émail</div>
+          <div class="teintes">
+            <div class="teinte rond active" style="background:#8fb3a0" onclick="teinte(this,'#8fb3a0','#7aa08c')"></div>
+            <div class="teinte rond" style="background:#2f4a6b" onclick="teinte(this,'#2f4a6b','#243a55')"></div>
+            <div class="teinte rond" style="background:#e7e3d6" onclick="teinte(this,'#e7e3d6','#d8d3c3')"></div>
+            <div class="teinte rond" style="background:#8a4f2c" onclick="teinte(this,'#8a4f2c','#733f22')"></div>
+          </div>
+        </div>
+
+        <div class="ligne-achat">
+          <div class="quantite">
+            <div class="qte-btn" onclick="q(-1)">−</div>
+            <input id="qte" type="number" value="1">
+            <div class="qte-btn" onclick="q(1)">+</div>
+          </div>
+          <div class="btn-panier" onclick="ajouter()">Ajouter au panier</div>
+        </div>
+
+        <ul class="reassurance">
+          <li><svg><use href="sprites.svg#i-camion"/></svg>Expédié sous 3 jours, emballage sans plastique</li>
+          <li><svg><use href="sprites.svg#i-main"/></svg>Pièce unique, de légères variations sont normales</li>
+          <li><svg><use href="sprites.svg#i-retour"/></svg>Retours gratuits pendant 30 jours</li>
+        </ul>
+
+        <div class="details">
+          <div class="ouvert"><div class="entete-acc" onclick="acc(this)">Dimensions et matière</div><div class="contenu"><p>Diamètre 14 cm, hauteur 7,5 cm, contenance 45 cl. Grès chamotté, émail sans plomb.</p></div></div>
+          <div><div class="entete-acc" onclick="acc(this)">Entretien</div><div class="contenu"><p>Va au lave-vaisselle et au micro-ondes. Évitez les chocs thermiques brutaux, comme passer du congélateur au four.</p></div></div>
+          <div><div class="entete-acc" onclick="acc(this)">Livraison et retours</div><div class="contenu"><p>Colissimo suivi : 5,90 €, offert dès 80 €. Chaque pièce est calée dans du carton recyclé.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="atelier">
+    <div class="wrap">
+      <h4 class="titre-section">Quatre mains, un four à bois, aucune série.</h4>
+      <div>
+        <p>Céladon, c'est Anouk et Bastien, installés dans un ancien séchoir à tuiles en Puisaye depuis 2019. Ils tournent, émaillent et cuisent chaque pièce sur place.</p>
+        <p>Pour découvrir l'atelier, <a href="#">cliquez ici</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="suggestions wrap">
+    <div class="titre-section">Pour aller avec</div>
+    <div class="grille">
+      <div class="carte" style="--glacure:#2f4a6b;--glacure-int:#243a55" onclick="location.href='#'"><div class="visuel"><svg role="img" viewBox="0 0 600 750"><use href="sprites.svg#tasse"/></svg></div><div class="nom">Tasse Fougère</div><p>28,00 €</p></div>
+      <div class="carte" style="--glacure:#e7e3d6;--glacure-int:#d8d3c3" onclick="location.href='#'"><div class="visuel"><svg role="img" viewBox="0 0 600 750"><use href="sprites.svg#assiette"/></svg></div><div class="nom">Assiette Écorce</div><p>39,00 €</p></div>
+      <div class="carte" style="--glacure:#8a4f2c;--glacure-int:#733f22" onclick="location.href='#'"><div class="visuel"><svg role="img" viewBox="0 0 600 750"><use href="sprites.svg#vase"/></svg></div><div class="nom">Vase Mousse</div><p>56,00 €</p></div>
+    </div>
+  </div>
+
+  <div class="lettre">
+    <div class="wrap">
+      <div>
+        <div class="titre-section">La lettre de l'atelier</div>
+        <p style="color:#a3aea9">Une fois par mois : les prochaines cuissons et les pièces de second choix.</p>
+      </div>
+      <div class="form-lettre">
+        <input type="text" placeholder="Votre e-mail">
+        <div class="btn" onclick="this.textContent='Merci !'">OK</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pied">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Céla<i>don</i></a>
+      <p>Céramiques tournées à la main en Puisaye.</p>
+    </div>
+    <div><div class="titre-col">Boutique</div><ul><li><a href="#">Bols</a></li><li><a href="#">Tasses</a></li><li><a href="#">Cartes cadeaux</a></li></ul></div>
+    <div><div class="titre-col">Aide</div><ul><li><a href="#">Livraison</a></li><li><a href="#">Retours</a></li><li><a href="#">Contact</a></li></ul></div>
+    <div><div class="titre-col">Informations</div><ul><li><a href="#">Mentions légales</a></li><li><a href="#">CGV</a></li></ul></div>
+    <div class="bas">
+      <p>Boutique fictive créée par Rampe pour une démonstration.</p>
+      <div class="reseaux">
+        <a href="#"><svg><use href="sprites.svg#i-insta"/></svg></a>
+        <a href="#"><svg><use href="sprites.svg#i-pin"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup-fond" id="popup">
+  <div class="popup">
+    <span class="fermer" onclick="document.getElementById('popup').classList.remove('visible')">×</span>
+    <div class="gros">-10 % sur votre première commande</div>
+    <div class="petit">Inscrivez-vous et recevez votre code par e-mail.</div>
+    <input type="text" placeholder="E-mail">
+    <div class="ok" onclick="document.getElementById('popup').classList.remove('visible')">J'en profite</div>
+  </div>
+</div>
+
+<script>
+  // Carrousel qui tourne tout seul toutes les 3 s, sans bouton pause.
+  let i = 0;
+  const vues = document.querySelectorAll('.galerie-principale .vue');
+  const vigs = document.querySelectorAll('.vignette');
+  function voir(n) { i = n; vues.forEach((v, k) => v.classList.toggle('active', k === n)); vigs.forEach((v, k) => v.classList.toggle('active', k === n)); }
+  setInterval(() => voir((i + 1) % vues.length), 3000);
+
+  function teinte(el, c, ci) {
+    document.querySelectorAll('.teinte').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('#galerie, .vignettes').forEach(g => { g.style.setProperty('--glacure', c); g.style.setProperty('--glacure-int', ci); });
+  }
+  function q(d) { const e = document.getElementById('qte'); e.value = Math.max(1, +e.value + d); }
+  function ajouter() { const c = document.getElementById('compteur-panier'); c.textContent = +c.textContent + +document.getElementById('qte').value; }
+  function acc(el) { el.parentNode.classList.toggle('ouvert'); }
+
+  // Pop-up promo au bout de 6 s, sans gestion du focus ni touche Échap.
+  if (!location.search.includes('capture')) setTimeout(() => document.getElementById('popup').classList.add('visible'), 6000);
+</script>
+</body>
+</html>

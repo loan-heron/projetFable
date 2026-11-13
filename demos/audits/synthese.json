@@ -1,0 +1,74 @@
+[
+  {
+    "boutique": "celadon",
+    "version": "avant",
+    "lighthouse": 61,
+    "regles": 9,
+    "occurrences": 75,
+    "critiques": 1,
+    "graves": 4,
+    "horsClavier": 20,
+    "arretsTab": 24,
+    "focusInvisible": 24
+  },
+  {
+    "boutique": "celadon",
+    "version": "apres",
+    "lighthouse": 100,
+    "regles": 0,
+    "occurrences": 0,
+    "critiques": 0,
+    "graves": 0,
+    "horsClavier": 0,
+    "arretsTab": 42,
+    "focusInvisible": 0
+  },
+  {
+    "boutique": "foulee",
+    "version": "avant",
+    "lighthouse": 83,
+    "regles": 6,
+    "occurrences": 89,
+    "critiques": 0,
+    "graves": 3,
+    "horsClavier": 33,
+    "arretsTab": 13,
+    "focusInvisible": 13
+  },
+  {
+    "boutique": "foulee",
+    "version": "apres",
+    "lighthouse": 100,
+    "regles": 0,
+    "occurrences": 0,
+    "critiques": 0,
+    "graves": 0,
+    "horsClavier": 0,
+    "arretsTab": 45,
+    "focusInvisible": 0
+  },
+  {
+    "boutique": "vrac",
+    "version": "avant",
+    "lighthouse": 82,
+    "regles": 6,
+    "occurrences": 55,
+    "critiques": 1,
+    "graves": 2,
+    "horsClavier": 10,
+    "arretsTab": 19,
+    "focusInvisible": 19
+  },
+  {
+    "boutique": "vrac",
+    "version": "apres",
+    "lighthouse": 100,
+    "regles": 0,
+    "occurrences": 0,
+    "critiques": 0,
+    "graves": 0,
+    "horsClavier": 0,
+    "arretsTab": 27,
+    "focusInvisible": 0
+  }
+]

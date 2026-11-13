@@ -1,0 +1,71 @@
+{
+  "url": "http://localhost:8765/foulee/avant.html?capture",
+  "date": "2026-11-13T09:41:44.288Z",
+  "boutique": "foulee",
+  "version": "avant",
+  "lighthouse": 83,
+  "regles": 6,
+  "occurrences": 89,
+  "critiques": 0,
+  "graves": 3,
+  "horsClavier": 33,
+  "arretsTab": 13,
+  "focusInvisible": 13,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "aide": "Elements must meet minimum color contrast ratio thresholds",
+      "criteres": [
+        "wcag143"
+      ],
+      "occurrences": 31,
+      "url": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI"
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "aide": "Document should have one main landmark",
+      "criteres": [],
+      "occurrences": 1,
+      "url": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=axeAPI"
+    },
+    {
+      "id": "link-name",
+      "impact": "serious",
+      "aide": "Links must have discernible text",
+      "criteres": [
+        "wcag244",
+        "wcag412"
+      ],
+      "occurrences": 2,
+      "url": "https://dequeuniversity.com/rules/axe/4.14/link-name?application=axeAPI"
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "aide": "Page should contain a level-one heading",
+      "criteres": [],
+      "occurrences": 1,
+      "url": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=axeAPI"
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "aide": "All page content should be contained by landmarks",
+      "criteres": [],
+      "occurrences": 47,
+      "url": "https://dequeuniversity.com/rules/axe/4.14/region?application=axeAPI"
+    },
+    {
+      "id": "svg-img-alt",
+      "impact": "serious",
+      "aide": "<svg> elements with an img or image role must have alternative text",
+      "criteres": [
+        "wcag111"
+      ],
+      "occurrences": 7,
+      "url": "https://dequeuniversity.com/rules/axe/4.14/svg-img-alt?application=axeAPI"
+    }
+  ]
+}
