@@ -34,5 +34,5 @@ NET
 ifreload -a
 sysctl -w net.ipv4.ip_forward=1 >/dev/null
 echo 'net.ipv4.ip_forward=1' > /etc/sysctl.d/90-breche.conf
-ip -br addr show "$PLAT_BRIDGE" "$LABS_BRIDGE"
+ip -br addr show dev "$PLAT_BRIDGE"; ip -br addr show dev "$LABS_BRIDGE"
 echo "Ponts créés. Étape suivante : 02-pare-feu.sh"
